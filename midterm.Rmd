@@ -158,7 +158,7 @@ CreateTableOne(data=Second_Temp_CancerbySexG)
 
 ### Rozalyn
 
-```{r, eval=F}
+```{r, eval=F, warning=F}
 library(readxl)
 PcloDS<-read_xlsx("data/Midterm_Dataset.xlsx")
 library(dplyr)
@@ -216,16 +216,17 @@ PcloLFNNA<-na.omit(PcloLFN)
 PcloLFYNA<-na.omit(PcloLFY)
 
 PcloLFAll<-rbind(PcloLFNNA,PcloLFYNA)
+
 PcloLFAll$PCLO[PcloLFAll$PCLO=="Mutated"]<-"1"
 PcloLFAll$PCLO[PcloLFAll$PCLO=="not mutated"]<-"0"
 
 #Test statistic for PCLO +LF
 
 #checking counts
-length(PcloLF0NA[PcloLF0NA=='0'])
-length(PcloLF0NA[PcloLF0NA=='1'])
-length(PcloLF1NA[PcloLF1NA=='0'])
-length(PcloLF1NA[PcloLF1NA=='1'])
+length(PcloLFY[PcloLFY=='0'])
+length(PcloLFY[PcloLFY=='1'])
+length(PcloLFN[PcloLFN=='0'])
+length(PcloLFN[PcloLFN=='1'])
 
 #Creating 2 by 2 dataframe from counts above
 PcloLFTable<-data.frame(
@@ -318,6 +319,129 @@ LF_Age_All$LF_PCLO<-as.factor(LF_Age_All$LF_PCLO)
 
 #Pairwise Wilcoxen Rank Sum test on Mutation Burden+LF+PCLO
 pairwise.wilcox.test(x=LF_Age_All$Age,g=LF_Age_All$LF_PCLO,data=LF_Age_All,p.adjust.method="bonferroni",paired=FALSE,alternative="two.sided",conf.level=0.95)
+
+#Initial Distribution of Primary Outcomes
+require(ggplot2)
+
+#Histogram 1: Mutation Burden+Not Mutated PCLO
+ggplot(PcloMtN, aes(x=Mutation_Burden,fill=PCLO,color=PCLO)) +
+  geom_histogram(binwidth=30,linetype="dotted",alpha=0.5,color="mediumorchid3",fill="mediumorchid3")+
+  geom_density(size=0.75,alpha=0.5,color="black")+
+  scale_linetype_manual(values=c(PCLO="dotted"))+
+  labs(title="Histogram of Patient's Mutation Burden without a mutation in PCLO",
+       x="Mutation Burden",
+       y="Density")+
+  theme(legend.position="top",
+        panel.border=element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.background = element_blank(),
+        strip.background.x = element_rect("grey83"),
+        axis.line = element_line(color="black"),
+        plot.subtitle = element_text(size=15, hjust = 0.5),
+        plot.title=element_text(size=15,face="bold", hjust = 0.5),
+        axis.title=element_text(size=15,hjust = 0.5))+
+  scale_fill_manual(values=c(PCLO="mediumorchid3"),
+                    labels=c(PCLO="without mutations"))+
+  scale_color_manual(values=c(PCLO="mediumorchid3"),
+                     labels=c(PCLO="without mutations"))
+
+#Histogram 2: Mutation Burden+Mutated PCLO
+ggplot(PcloMtY, aes(x=Mutation_Burden,fill=PCLO,color=PCLO))+
+  geom_histogram(binwidth=30,alpha=0.5,fill="slateblue3",color="slateblue3")+
+  geom_density(size=0.75,alpha=0.5,color="black")+
+  scale_linetype_manual(values=c(PCLO="dotted"))+
+  labs(title="Histogram of Patient's Mutation Burden with mutations in PCLO",
+       x="Mutation Burden",
+       y="Density")+
+  theme(legend.position="top",
+        panel.border=element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(color="black"),
+        plot.subtitle = element_text(size=15, hjust = 0.5),
+        plot.title=element_text(size=15,face="bold", hjust = 0.5),
+        axis.title=element_text(size=15,hjust = 0.5))+
+  scale_fill_manual(values=c(PCLO="slateblue3"),
+                    labels=c(PCLO="with mutations"))+
+  scale_color_manual(values=c(PCLO="slateblue3"),
+                     labels=c(PCLO="with mutations"))
+
+#Intial Distrubution of Secondary outcome + PCLO mutation status 
+
+#Histogram 3: Liver Fibrosis occurrence + Not mutated PCLO
+ggplot(PcloLFN, aes(x=Liver_Fibrosis, color=Liver_Fibrosis,fill=Liver_Fibrosis)) +
+  geom_bar(linetype="dotted",alpha=0.5)+
+  scale_linetype_manual(values=c(PCLO="dotted"))+
+  labs(title="Histogram of Liver Fibrosis status in patients without mutation in PCLO",
+       x="Liver Fibrosis Occurence",
+       y="Density")+
+  theme(legend.position="top",
+        panel.border=element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.background = element_blank(),
+        strip.background.x = element_rect("grey83"),
+        axis.line = element_line(color="black"),
+        plot.subtitle = element_text(size=15, hjust = 0.5),
+        plot.title=element_text(size=15,face="bold", hjust = 0.5),
+        axis.title=element_text(size=15,hjust = 0.5))+
+  scale_fill_manual(values=c('2'="mediumorchid3",'1'="slateblue3"),
+                    labels=c('2'="without mutation",'1'="with mutation"))+
+  scale_color_manual(values=c('2'="mediumorchid3",'1'="slateblue3"),
+                     labels=c('2'="without mutation",'1'="with mutation"))
+
+#Histogram 4: Liver Fibrosis+Mutated PCLO
+ggplot(PcloLFY, aes(x=Liver_Fibrosis,color=Liver_Fibrosis,fill=Liver_Fibrosis)) +
+  geom_bar(linetype="dotted",alpha=0.5)+
+  scale_linetype_manual(values=c(PCLO="dotted"))+
+  labs(title="Histogram of Liver Fibrosis status in patients with mutation in PCLO",
+       x="Liver Fibrosis Occurence",
+       y="Density")+
+  theme(legend.position="top",
+        panel.border=element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.background = element_blank(),
+        strip.background.x = element_rect("grey83"),
+        axis.line = element_line(color="black"),
+        plot.subtitle = element_text(size=15, hjust = 0.5),
+        plot.title=element_text(size=15,face="bold", hjust = 0.5),
+        axis.title=element_text(size=15,hjust = 0.5))+
+  scale_fill_manual(values=c('2'="mediumorchid3",'1'="slateblue3"),
+                    labels=c('2'="without mutation",'1'="with mutation"))+
+  scale_color_manual(values=c('2'="mediumorchid3",'1'="slateblue3"),
+                     labels=c('2'="without mutation",'1'="with mutation"))
+
+# Final Violin Plot for Primary Outcome
+
+#Using rbind() to compile data for violin plot 
+PcloMt0$PCLO<-"0"
+PcloMt1$PCLO<-"1"
+PcloMt<-rbind(PcloMt0,PcloMt1)
+
+#Violin plot for Mutation burden and PCLO
+ggplot(PcloMt, aes(x=PCLO,y=Mutation_Burden, fill=PCLO,color=PCLO)) +
+  geom_violin(scale="count")+
+  labs(x="PCLO",
+       y="Mutation Burden")+
+  theme(legend.position="bottom",
+        panel.border=element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.background = element_blank(),
+        strip.background.x = element_rect("grey83"),
+        axis.line = element_line(color="black"),
+        plot.subtitle = element_text(size=15, hjust = 0.5),
+        plot.title=element_text(size=15,face="bold", hjust = 0.5),
+        axis.title=element_text(size=15,hjust = 0.5))+
+  scale_fill_manual(values=c('0'="mediumorchid3",'1'="slateblue3"),
+                    labels=c('0'="Not Mutated",'1'="Mutated"))+
+  scale_color_manual(values=c('0'="mediumorchid3",'1'="slateblue3"),
+                     labels=c('0'="Not Mutated",'1'="Mutated"))+
+  scale_linetype_manual(values=c('0'="dotted",'1'="solid"), 
+                        labels=c('0'="Not Mutated",'1'="Mutated"))
 ```
 
 ### Ariana
