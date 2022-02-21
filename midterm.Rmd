@@ -13,11 +13,10 @@ Organized by primary and secondary analyses carried out by each team member.
 ### Bryce
 
 ```{r}
-#This script gets through the analyses I used and includes the imutation set up for the data used in the midterm project
-
+#This script gets through the analyses I used and includes the imputation set up for the data used in the midterm project
 #Step 1: Read in files and impute PCLO mutation
 library(openxlsx)
-Midterm_Dataset <- read.xlsx("data/Midterm_Dataset.xlsx")
+Midterm_Dataset <- read.xlsx("Midterm_Dataset.xlsx")
 Keep_SubsetA <- Midterm_Dataset[,c(1:3,7:13,19,22)]
 Keep_SubsetB <- as.data.frame(Keep_SubsetA)
 Mutated <- Keep_SubsetB[which(Keep_SubsetB$PCLO == "Mutated"),]
@@ -96,6 +95,24 @@ Norm_Males$NewGroup <- "Norm_Males"
 CancerbySexG <- rbind(Mt_Females,Mt_Males,Norm_Females,Norm_Males)
 pairwise.wilcox.test(CancerbySexG$Age, CancerbySexG$NewGroup, p.adjust.method = "fdr")
 pairwise.wilcox.test(CancerbySexG$Age, CancerbySexG$NewGroup, p.adjust.method = "none")
+#Now to find the median and the IQR for the signficant results from the pairwisewilcoxon rank sum test
+median(Norm_Females$Age)
+IQR(Norm_Females$Age)
+median(Norm_Males$Age)
+IQR(Norm_Males$Age)
+#Adding in information about the t-test between PCLO mutation or lack thereof and age
+nrow(Mutated)
+nrow(Not_Mutated)
+var.test(Mutated$Age, Not_Mutated$Age, alternative= "two.sided")
+t.test(Mutated$Age, Not_Mutated$Age, var.equal=TRUE)
+#Adding information on boxplot generation for figures
+boxplot(Age~NewGroup, data=CancerbySexG, col=(c("mediumorchid3","slateblue3")), main = "PCLO by Sex Over Age", xlab="PCLO by Sex", ylab = "Age")
+boxplot(Mutation_Burden~NewGroup, data=CancerbySexG, col=(c("mediumorchid3","slateblue3")), main = "PCLO by Sex Over Mutation Burden", xlab="PCLO by Sex", ylab = "Mutation Burden")
+#Above were the original plots. Now we are adding in the plots with the resolution everyone wants
+png(file="testdrive5_PCLO_by_Sex_Over_Age.png", width = 1000, height = 1000); par(mar = c(5,5,2,2), xaxs = "i", yaxs = "i", cex.axis=2, cex.lab= 2); boxplot(Age~NewGroup, data=CancerbySexG, col=(c("mediumorchid3","slateblue3")), main = "PCLO by Sex Over Age", xlab="PCLO by Sex", ylab = "Age"); legend("bottomleft", legend = c("Female", "Male"), fill = c("mediumorchid3","slateblue3"), pch = 5, cex=2); dev.off()
+png(file="testdriveB_PCLO_by_Mutation_Burden_Over_Age.png", width = 1000, height = 1000); par(mar = c(5,5,2,2), xaxs = "i", yaxs = "i", cex.axis=2, cex.lab= 2); boxplot(Mutation_Burden~NewGroup, data=CancerbySexG, col=(c("mediumorchid3","slateblue3")), main = "PCLO by Sex Over Mutation Burden", xlab="PCLO by Sex", ylab = "Mutation Burden"); legend("topleft", legend = c("Female", "Male"), fill = c("mediumorchid3","slateblue3"), pch = 5, cex=2); dev.off()
+#The colors are seperated by gender
+#Additional tests to try
 chisq.test(table(Males$PCLO,Males$BMI_Category))
 fisher.test(table(Males$PCLO,Males$BMI_Category))
 chisq.test(table(Males$PCLO,Males$Recurrence))
