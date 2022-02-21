@@ -488,6 +488,7 @@ var.test(WithoutAlcNoMut$Age, WithoutAlcYesMut$Age)
 t.test(WithoutAlcNoMut$Age, WithoutAlcYesMut$Age, alternative = "two.sided")
 ```
 
+### Tri
 
 ```{r}
 require(readr)
