@@ -1,0 +1,372 @@
+﻿Patient_ID,Age,Sex,Race,Height_cm,Weight_kg,Alcohol_History,Hepatitis_History,Survival_Status,Recurrence,Metastasis,Mutation_Burden,Liver_Fibrosis,TP53,TTN,CTNNB1,MUC16,ALB,PCLO,OBSCN,RYR2,BMI_Category
+4072,74,FEMALE,WHITE,,,0,0,0,,0,,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+4073,73,MALE,WHITE,,,0,0,1,1,1,83,,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,
+5258,48,MALE,ASIAN,,55,,,1,,0,103,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+5259,60,FEMALE,ASIAN,153,49,0,0,1,,0,,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+5260,61,FEMALE,ASIAN,153,46,,,1,,0,51,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+5261,44,MALE,ASIAN,175,58,,,1,,0,32,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+5262,67,MALE,ASIAN,170,62,0,0,1,,0,85,,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+5263,35,MALE,ASIAN,163,59,0,0,0,,0,74,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+5264,71,MALE,ASIAN,160,52,,,1,,0,73,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A10Q,72,FEMALE,WHITE,,,0,0,0,0,1,26,,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A10R,66,FEMALE,WHITE,,,0,0,0,0,1,81,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,
+A10S,81,MALE,WHITE,,74,1,0,0,,1,,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A10T,76,MALE,WHITE,,86,0,0,0,0,1,70,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A10U,69,MALE,WHITE,,,1,0,0,0,1,116,,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,not mutated,
+A10W,50,MALE,ASIAN,,71,0,1,0,,1,163,,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,
+A10X,52,FEMALE,WHITE,,65,0,0,0,,1,2,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A10Y,76,MALE,WHITE,175,77,1,0,0,0,1,48,,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Overweight
+A10Z,62,FEMALE,WHITE,,79,0,0,0,,1,151,,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,
+A110,51,FEMALE,BLACK OR AFRICAN AMERICAN,155,91,1,0,0,0,1,31,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A112,80,MALE,WHITE,165,97,1,0,0,,1,237,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A113,55,FEMALE,WHITE,154,56,0,0,1,0,0,120,0,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,Healthy Weight
+A114,42,MALE,BLACK OR AFRICAN AMERICAN,173,74,0,1,0,,0,79,1,Mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Healthy Weight
+A115,53,MALE,WHITE,168,79,1,0,0,0,0,66,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+A116,68,MALE,ASIAN,175,73,0,1,0,0,0,117,1,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A118,77,FEMALE,WHITE,169,75,,,1,0,0,88,0,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+A119,40,MALE,ASIAN,160,58,0,1,0,,1,532,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A11A,67,MALE,BLACK OR AFRICAN AMERICAN,156,67,0,0,1,1,0,115,0,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A11B,73,MALE,WHITE,181,134,0,0,0,,0,38,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A11C,69,MALE,WHITE,186,123,,,1,1,0,63,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A11D,57,FEMALE,WHITE,163,73,0,0,0,0,0,94,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A123,24,FEMALE,ASIAN,,,,,1,,0,,,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A12J,62,MALE,BLACK OR AFRICAN AMERICAN,173,,0,1,1,1,1,52,,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A1E9,70,MALE,WHITE,172,101,1,0,0,0,0,37,1,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,Obesity
+A1EA,68,MALE,ASIAN,168,94,0,1,1,0,0,89,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A1EB,72,FEMALE,UNKNOWN_OTHER,164,57,0,0,1,0,0,148,0,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Healthy Weight
+A1EC,20,FEMALE,WHITE,157,50,,,1,0,0,16,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A1ED,68,MALE,WHITE,168,85,1,0,1,1,0,189,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A1EE,73,MALE,WHITE,175,77,0,1,1,0,0,621,1,Mutated,not mutated,Mutated,Mutated,Mutated,Mutated,Mutated,not mutated,Overweight
+A1EF,57,FEMALE,WHITE,164,81,0,0,0,,0,106,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A1EG,76,MALE,WHITE,168,82,1,0,0,0,0,1113,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A1EH,23,MALE,WHITE,179,70,0,1,1,0,0,43,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A1EI,46,MALE,ASIAN,175,69,0,1,1,1,0,42,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A1EJ,71,FEMALE,WHITE,154,64,0,0,1,0,0,56,0,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A1EK,64,FEMALE,WHITE,159,97,0,0,0,0,1,48,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A1EL,23,MALE,BLACK OR AFRICAN AMERICAN,182,54,0,1,0,,0,62,0,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Underweight
+A1HT,50,MALE,ASIAN,163,54,0,0,1,,0,70,,Mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A216,62,FEMALE,WHITE,164,151,0,0,1,1,0,40,0,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A217,75,FEMALE,WHITE,163,81,1,0,1,,0,81,0,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A23B,70,FEMALE,WHITE,,,0,1,1,0,0,44,,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,
+A25S,64,MALE,WHITE,166,73,1,0,1,0,0,70,1,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+A25T,45,FEMALE,WHITE,167,64,0,1,1,0,0,21,0,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A25U,63,FEMALE,ASIAN,153,47,0,1,1,1,0,32,0,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A25V,68,MALE,WHITE,187,90,1,0,1,0,0,21,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A25W,79,FEMALE,WHITE,157,48,0,0,1,1,0,35,0,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A25X,73,MALE,ASIAN,165,65,0,1,1,,0,,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A25Y,52,FEMALE,ASIAN,158,57,0,1,0,0,0,46,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A25Z,58,MALE,ASIAN,173,69,0,1,1,1,0,48,1,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A26S,70,MALE,WHITE,168,41,1,0,1,1,1,63,0,not mutated,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Underweight
+A2HS,80,MALE,WHITE,180,97,0,0,0,,1,685,0,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+A2HT,54,MALE,BLACK OR AFRICAN AMERICAN,174,80,0,1,0,,1,705,0,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Overweight
+A2KA,52,FEMALE,WHITE,178,,0,0,1,0,1,761,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A2KB,46,FEMALE,WHITE,165,81,0,1,1,0,1,567,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A2KC,62,MALE,BLACK OR AFRICAN AMERICAN,171,,0,1,0,,1,49,,not mutated,not mutated,Mutated,not mutated,Mutated,Mutated,not mutated,not mutated,
+A2L6,69,MALE,WHITE,168,110,1,0,1,0,1,66,1,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Obesity
+A2QQ,80,MALE,WHITE,,,1,0,1,1,1,88,,not mutated,Mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,
+A2QR,75,MALE,WHITE,,,0,0,0,0,0,341,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A39V,77,MALE,WHITE,174,79,0,0,0,0,0,54,0,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A39W,29,FEMALE,WHITE,177,74,0,0,0,,0,35,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A39X,78,FEMALE,WHITE,152,48,0,0,0,0,0,275,0,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Healthy Weight
+A39Y,67,MALE,ASIAN,176,85,0,0,0,,0,1155,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A39Z,43,FEMALE,UNKNOWN_OTHER,165,61,1,0,0,,0,301,,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3A0,70,MALE,WHITE,178,88,0,0,0,0,0,1166,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A3A1,65,MALE,UNKNOWN_OTHER,185,78,0,0,0,,0,399,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3A2,76,FEMALE,WHITE,178,85,0,0,0,,0,60,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A3A3,45,MALE,ASIAN,167,71,0,0,0,,0,40,0,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A3A4,37,MALE,WHITE,189,65,0,0,0,0,0,30,0,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Underweight
+A3A5,66,FEMALE,WHITE,170,58,0,0,0,0,0,47,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Healthy Weight
+A3A6,72,FEMALE,WHITE,175,52,0,0,0,,0,12,0,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A3A7,67,MALE,UNKNOWN_OTHER,188,80,1,0,0,0,0,95,0,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3A8,75,MALE,WHITE,177,99,0,0,0,,0,93,0,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Obesity
+A3A9,64,FEMALE,WHITE,168,62,0,0,0,0,1,268,0,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,Healthy Weight
+A3CG,80,MALE,WHITE,168,93,0,1,1,0,0,305,1,,,,,,,,,Obesity
+A3CH,53,MALE,ASIAN,178,74,0,1,1,0,0,33,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3CI,71,MALE,WHITE,167,98,0,0,1,1,0,11,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A3CJ,52,MALE,UNKNOWN_OTHER,174,72,0,1,1,0,0,1292,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3CK,61,MALE,ASIAN,170,67,0,1,1,1,0,191,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+A3EP,75,FEMALE,BLACK OR AFRICAN AMERICAN,168,71,0,0,1,1,0,245,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A3ER,62,MALE,WHITE,188,111,0,0,1,0,1,39,1,,,,,,,,,Obesity
+A3I0,76,FEMALE,WHITE,,,0,0,1,0,0,60,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A3I1,81,FEMALE,WHITE,,,1,0,1,,1,53,0,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,
+A3JL,76,MALE,WHITE,168,73,1,0,1,1,1,74,,not mutated,not mutated,Mutated,Mutated,Mutated,not mutated,not mutated,Mutated,Overweight
+A3KF,66,FEMALE,WHITE,173,58,0,0,1,1,0,267,,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3KG,68,FEMALE,WHITE,159,64,1,0,1,0,0,326,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A3M9,45,MALE,ASIAN,174,61,1,0,1,0,0,92,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3MA,61,MALE,ASIAN,168,66,1,0,1,0,0,265,,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3MB,36,MALE,ASIAN,176,58,0,0,1,0,0,305,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3MC,54,MALE,ASIAN,163,52,1,0,1,0,0,75,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A3OU,59,MALE,WHITE,167,172,1,0,1,0,1,42,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A3R2,75,MALE,WHITE,,75,0,0,0,,1,53,,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,
+A3R3,38,FEMALE,WHITE,161,97,0,0,1,,1,29,,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A3RK,73,MALE,WHITE,178,101,1,0,1,0,1,35,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A459,47,MALE,ASIAN,167,51,,0,1,1,0,175,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A495,51,FEMALE,WHITE,172,70,0,1,1,1,0,81,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A496,84,FEMALE,WHITE,162,54,0,0,1,1,0,102,0,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Healthy Weight
+A4NA,67,FEMALE,WHITE,166,93,0,0,1,1,0,28,1,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A4NB,25,MALE,WHITE,185,69,0,0,1,0,0,25,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A4ND,56,FEMALE,WHITE,162,89,0,0,1,0,0,50,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A4NE,75,FEMALE,WHITE,170,79,0,0,0,,0,,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+A4NF,72,MALE,WHITE,173,86,0,1,1,0,0,82,1,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A4NG,77,MALE,WHITE,164,94,1,0,1,,0,,,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A4NH,65,FEMALE,WHITE,157,81,1,0,1,0,0,40,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A4NI,67,MALE,WHITE,172,99,1,0,1,1,0,113,0,not mutated,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Obesity
+A4NJ,54,FEMALE,WHITE,164,88,0,0,1,0,0,70,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A4NK,80,FEMALE,WHITE,,84,0,0,0,0,0,59,0,not mutated,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,
+A4NL,46,MALE,WHITE,173,113,1,0,1,1,0,22,0,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A4NN,56,FEMALE,WHITE,163,59,0,0,0,0,0,48,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A4NO,65,MALE,WHITE,176,109,0,1,1,0,0,47,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A4NP,32,MALE,WHITE,177,79,0,0,1,0,0,18,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A4NQ,60,MALE,WHITE,159,75,0,1,0,0,0,67,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Overweight
+A4NR,85,FEMALE,WHITE,64,54,0,0,0,,0,33,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A4NS,61,FEMALE,WHITE,167,58,1,0,0,0,0,30,0,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A4NV,61,MALE,WHITE,179,129,0,0,1,1,0,107,0,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Obesity
+A4U2,71,MALE,WHITE,171,82,1,0,0,0,1,79,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A4XI,58,MALE,ASIAN,170,55,0,0,1,1,0,108,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+A4ZP,78,MALE,WHITE,168,69,1,0,1,,0,58,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A4ZQ,52,MALE,WHITE,,,0,1,1,1,0,66,,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A520,58,MALE,WHITE,179,104,0,0,1,1,1,20,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A5DF,58,FEMALE,WHITE,167,72,0,0,0,,0,41,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+A5KG,60,FEMALE,ASIAN,160,61,0,0,1,0,0,15,,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A5MZ,78,MALE,UNKNOWN_OTHER,185,82,0,0,0,,0,42,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A5N0,90,FEMALE,UNKNOWN_OTHER,156,65,0,0,0,0,0,103,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A5NO,50,MALE,BLACK OR AFRICAN AMERICAN,,,0,1,1,1,1,90,1,Mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,
+A5RF,64,MALE,WHITE,177,75,0,1,1,0,1,43,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A5RG,66,MALE,BLACK OR AFRICAN AMERICAN,173,123,1,1,1,1,1,103,,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A5SI,44,MALE,ASIAN,177,74,0,1,1,0,0,29,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A5SJ,59,MALE,WHITE,171,87,1,1,1,0,0,84,1,Mutated,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+A5SK,58,MALE,WHITE,169,67,0,1,1,,0,,1,not mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,Healthy Weight
+A5SL,70,MALE,WHITE,180,88,1,0,1,1,0,97,0,not mutated,Mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Overweight
+A5SM,58,MALE,WHITE,184,106,1,1,1,0,0,88,1,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A5UC,63,MALE,ASIAN,165,57,1,0,1,0,0,42,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A5UD,45,MALE,ASIAN,170,62,1,0,1,0,0,130,,Mutated,not mutated,Mutated,not mutated,not mutated,Mutated,Mutated,not mutated,Healthy Weight
+A5UE,48,MALE,ASIAN,175,65,1,0,1,0,0,104,,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,Healthy Weight
+A5W4,69,MALE,WHITE,183,106,1,0,1,0,0,51,,Mutated,Mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Obesity
+A627,74,MALE,WHITE,176,74,1,0,1,1,0,3,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A66X,35,MALE,ASIAN,170,61,1,0,1,0,0,29,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A66Y,51,FEMALE,ASIAN,160,59,0,0,1,,0,68,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A69H,64,MALE,WHITE,173,70,1,0,1,1,0,37,,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+A69I,69,MALE,WHITE,180,95,0,0,1,,0,,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A6C0,75,FEMALE,WHITE,160,90,0,0,0,,1,26,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A6G5,66,MALE,WHITE,184,80,1,1,1,1,1,66,,not mutated,Mutated,Mutated,not mutated,Mutated,Mutated,not mutated,not mutated,Healthy Weight
+A6GG,79,FEMALE,WHITE,158,65,0,0,1,1,0,158,,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A6J8,68,MALE,WHITE,188,65,1,0,1,1,0,71,,,,,,,,,,Underweight
+A6M4,74,FEMALE,WHITE,,87,0,0,1,1,1,140,,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A6M5,20,FEMALE,WHITE,,,0,0,1,1,0,19,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A6M6,75,MALE,WHITE,,,1,0,1,1,0,162,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A6UC,65,MALE,WHITE,182,91,1,0,1,0,0,97,1,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A73A,71,MALE,WHITE,174,102,1,0,1,1,0,77,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A73B,72,FEMALE,WHITE,154,74,0,0,0,0,0,58,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A73C,65,FEMALE,WHITE,159,49,0,0,1,0,0,66,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A73D,68,FEMALE,WHITE,170,102,0,1,1,0,1,50,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A73E,66,MALE,WHITE,172,108,1,0,1,1,0,83,0,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Obesity
+A73F,77,FEMALE,WHITE,164,69,0,0,1,1,0,51,0,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A73G,73,FEMALE,WHITE,155,44,0,0,1,1,0,88,0,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A75C,64,MALE,WHITE,175,84,0,1,1,1,0,94,,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A75E,61,MALE,WHITE,175,103,1,1,1,1,0,92,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A75G,63,MALE,WHITE,178,69,1,1,1,1,0,197,1,Mutated,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,Healthy Weight
+A75H,77,MALE,WHITE,173,84,0,1,1,0,1,99,1,not mutated,Mutated,Mutated,Mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+A75I,61,MALE,BLACK OR AFRICAN AMERICAN,188,100,0,1,1,0,1,134,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A75V,54,MALE,UNKNOWN_OTHER,180,92,1,1,1,1,1,65,1,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A7B7,48,MALE,BLACK OR AFRICAN AMERICAN,180,108,0,1,1,0,1,65,0,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A7D4,69,MALE,BLACK OR AFRICAN AMERICAN,172,87,0,1,1,1,0,79,,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A7IE,57,MALE,ASIAN,172,62,1,0,1,0,0,129,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7IF,59,MALE,ASIAN,169,58,1,0,1,0,0,80,,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7IG,47,MALE,ASIAN,174,62,1,0,1,0,0,108,,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Healthy Weight
+A7IH,58,MALE,ASIAN,175,56,1,0,1,1,0,509,,not mutated,Mutated,Mutated,Mutated,not mutated,Mutated,Mutated,Mutated,Underweight
+A7II,54,MALE,ASIAN,168,52,1,0,1,0,0,121,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Mutated,Underweight
+A7IJ,56,MALE,ASIAN,165,54,1,0,1,1,0,120,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+A7IK,59,MALE,ASIAN,168,57,1,0,1,0,0,267,,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+A7IL,61,MALE,ASIAN,174,63,1,0,1,0,0,83,,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7K0,65,MALE,WHITE,174,66,1,1,0,,0,78,,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7K2,64,MALE,WHITE,166,79,0,1,1,1,0,41,,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Overweight
+A7K7,61,FEMALE,WHITE,168,125,0,0,1,0,0,53,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A7K8,57,MALE,UNKNOWN_OTHER,170,109,0,0,1,1,0,35,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A7M5,76,MALE,ASIAN,164,68,1,0,1,1,1,142,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Mutated,Overweight
+A7M6,60,FEMALE,WHITE,158,77,0,1,1,0,1,64,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Obesity
+A7M7,65,MALE,WHITE,181,77,1,0,1,1,1,26,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7M8,31,MALE,ASIAN,,,1,0,1,1,1,13,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+A7M9,70,MALE,WHITE,170,73,0,0,0,,1,71,1,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Mutated,Mutated,Overweight
+A7MA,62,FEMALE,WHITE,165,85,0,0,1,0,0,51,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Obesity
+A7MB,24,MALE,WHITE,180,62,0,0,1,0,1,1095,0,Mutated,Mutated,not mutated,Mutated,not mutated,Mutated,Mutated,Mutated,Healthy Weight
+A7MC,59,MALE,WHITE,176,78,1,1,1,0,1,53,1,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+A7MD,67,MALE,BLACK OR AFRICAN AMERICAN,175,57,1,1,0,,1,86,1,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7ME,51,MALE,ASIAN,165,75,0,1,1,1,1,72,1,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,Overweight
+A7MF,56,MALE,WHITE,195,95,0,1,0,0,1,85,1,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7PX,48,FEMALE,ASIAN,161,43,0,0,1,1,0,27,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A7PY,20,FEMALE,ASIAN,156,40,0,0,1,1,0,23,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A7PZ,61,MALE,ASIAN,159,50,0,0,1,1,0,220,,Mutated,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7S9,47,FEMALE,ASIAN,161,58,0,1,1,1,0,50,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Healthy Weight
+A7SB,53,MALE,ASIAN,166,61,0,1,1,1,0,37,0,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7SF,66,MALE,ASIAN,170,76,0,1,1,0,0,31,1,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Overweight
+A7SH,42,MALE,ASIAN,174,68,0,1,1,0,0,57,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7SK,59,MALE,ASIAN,169,60,0,1,1,0,0,105,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7XO,29,MALE,ASIAN,175,64,0,0,1,0,0,46,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A7XP,53,FEMALE,ASIAN,157,54,0,0,1,0,0,46,,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A82E,60,FEMALE,ASIAN,150,44,0,0,1,1,0,21,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A86L,68,FEMALE,WHITE,159,56,0,0,1,1,1,113,0,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A8HS,18,MALE,ASIAN,172,62,0,0,1,,0,,,,,,,,,,,Healthy Weight
+A8HT,74,MALE,ASIAN,159,48,1,0,1,0,0,166,,Mutated,Mutated,not mutated,Mutated,Mutated,Mutated,not mutated,not mutated,Healthy Weight
+A8HU,39,FEMALE,ASIAN,163,42,0,0,1,0,0,69,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A8HV,51,FEMALE,ASIAN,159,51,0,0,1,0,0,120,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A8JO,34,MALE,WHITE,196,90,1,0,1,1,1,25,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A8LF,74,MALE,WHITE,171,104,1,0,1,1,1,86,,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A8O5,59,FEMALE,ASIAN,165,63,0,0,1,1,0,93,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A8O6,50,FEMALE,ASIAN,165,45,0,0,1,,0,54,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A8S7,68,MALE,WHITE,164,73,0,1,0,0,1,65,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Overweight
+A8TC,43,FEMALE,WHITE,155,52,0,1,1,,1,,1,,,,,,,,,Healthy Weight
+A8TD,49,FEMALE,WHITE,156,69,0,0,1,1,0,49,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A8TE,16,MALE,WHITE,157,43,0,0,1,0,1,11,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A8TF,74,MALE,WHITE,166,57,0,1,0,0,1,118,1,not mutated,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A8TG,58,MALE,WHITE,184,71,0,1,1,0,0,75,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A8YO,66,FEMALE,WHITE,170,74,1,0,1,0,0,54,,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+A97K,54,MALE,ASIAN,170,64,1,0,1,1,0,50,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A9CD,73,MALE,WHITE,,,,0,0,0,1,79,1,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,
+A9CE,79,FEMALE,WHITE,,,,0,1,0,1,99,0,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,
+A9CF,64,MALE,WHITE,,,0,0,1,0,1,80,0,not mutated,not mutated,not mutated,Mutated,Mutated,Mutated,not mutated,not mutated,
+A9CG,55,MALE,WHITE,179,94,,0,1,1,1,65,0,not mutated,not mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+A9CV,59,MALE,WHITE,173,59,1,1,1,,1,93,,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A9CY,66,FEMALE,WHITE,152,83,0,0,1,1,1,69,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9CZ,72,MALE,ASIAN,167,73,0,1,1,1,1,43,1,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A9D0,67,FEMALE,BLACK OR AFRICAN AMERICAN,165,78,0,0,1,1,1,41,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A9D1,56,FEMALE,WHITE,170,130,0,0,1,1,1,103,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9D2,51,MALE,WHITE,172,74,0,1,1,0,1,50,1,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A9D4,64,FEMALE,WHITE,155,55,0,0,1,1,1,54,0,not mutated,Mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Healthy Weight
+A9DB,68,MALE,WHITE,187,96,0,0,0,,1,67,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A9FS,55,MALE,ASIAN,174,72,1,0,1,0,0,77,,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A9FW,68,MALE,ASIAN,175,67,1,0,1,0,0,107,,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A9G7,71,FEMALE,WHITE,157,69,0,0,1,1,0,366,,Mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Overweight
+A9GS,58,MALE,WHITE,162,92,1,0,0,0,1,58,,Mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Obesity
+A9GT,51,MALE,WHITE,182,122,1,1,0,0,1,70,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9GU,55,FEMALE,WHITE,154,78,0,0,1,1,1,122,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Obesity
+A9GV,54,FEMALE,WHITE,167,85,1,0,0,0,1,49,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9GW,64,MALE,WHITE,182,139,1,0,0,0,1,59,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9GX,68,MALE,WHITE,175,104,1,0,1,0,1,43,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9GY,64,FEMALE,WHITE,161,92,0,0,0,0,1,66,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9GZ,82,FEMALE,WHITE,153,51,0,0,0,0,1,79,,not mutated,not mutated,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,Healthy Weight
+A9H0,49,MALE,WHITE,180,89,1,1,1,1,0,64,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A9H1,58,MALE,WHITE,171,89,1,1,0,0,1,105,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9H2,64,FEMALE,WHITE,176,55,1,0,1,1,1,46,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A9H3,45,MALE,WHITE,179,105,1,0,1,0,1,143,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9H4,68,MALE,BLACK OR AFRICAN AMERICAN,167,61,1,1,1,1,1,59,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+A9H5,59,FEMALE,WHITE,157,69,1,1,0,0,1,69,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Overweight
+A9H6,68,FEMALE,WHITE,156,99,1,0,1,1,1,43,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9H7,81,FEMALE,WHITE,157,104,0,0,1,0,1,68,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+A9H8,85,FEMALE,WHITE,150,40,1,0,0,0,1,54,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+A9H9,70,MALE,WHITE,178,88,1,1,1,0,1,104,,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A9HA,70,MALE,WHITE,169,69,1,1,0,,1,108,1,Mutated,not mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Healthy Weight
+A9HB,66,MALE,UNKNOWN_OTHER,167,74,1,0,1,1,1,56,,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Overweight
+A9QC,48,MALE,WHITE,188,103,0,0,1,1,0,41,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+A9QD,68,MALE,WHITE,168,74,0,0,1,1,0,83,,not mutated,Mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+A9VG,58,MALE,WHITE,170,73,0,0,1,1,0,100,,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+A9VH,70,MALE,WHITE,165,69,0,0,1,1,0,77,,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AA0U,60,MALE,WHITE,178,93,0,0,1,0,1,63,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AA0V,69,FEMALE,WHITE,175,57,0,0,1,1,1,30,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AA1C,57,MALE,WHITE,174,90,0,0,1,1,0,70,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+AA1D,17,FEMALE,WHITE,161,59,0,0,1,1,0,11,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AA3A,81,FEMALE,WHITE,151,60,0,0,0,,1,47,0,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AA44,64,FEMALE,WHITE,152,61,0,0,1,0,1,62,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AA46,61,MALE,WHITE,156,75,0,0,1,1,1,44,0,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+AA47,33,FEMALE,WHITE,168,63,0,0,0,0,1,37,0,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AA8I,66,MALE,WHITE,171,103,0,0,1,0,1,920,1,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,Mutated,Mutated,Obesity
+AAAM,65,FEMALE,WHITE,163,80,0,0,0,,0,65,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+AAC8,72,MALE,ASIAN,156,57,0,1,0,,0,438,1,not mutated,Mutated,Mutated,not mutated,not mutated,Mutated,Mutated,Mutated,Healthy Weight
+AAC9,51,MALE,ASIAN,174,81,0,1,1,1,0,71,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AACA,65,MALE,ASIAN,165,70,0,1,1,0,0,94,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+AACB,74,FEMALE,ASIAN,156,72,0,1,1,1,0,75,1,Mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AACC,61,MALE,ASIAN,165,61,0,1,0,0,0,75,1,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Healthy Weight
+AACD,48,MALE,ASIAN,182,66,0,1,0,0,0,76,1,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACE,62,MALE,ASIAN,162,62,0,1,1,0,0,61,1,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACF,68,MALE,ASIAN,168,60,0,1,0,0,0,104,1,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACG,52,MALE,ASIAN,168,65,0,1,0,0,0,86,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACH,69,MALE,ASIAN,160,53,0,1,0,0,0,86,1,not mutated,Mutated,not mutated,Mutated,Mutated,not mutated,not mutated,Mutated,Healthy Weight
+AACI,69,MALE,ASIAN,155,48,,0,1,0,0,299,1,not mutated,Mutated,not mutated,Mutated,not mutated,Mutated,not mutated,Mutated,Healthy Weight
+AACJ,75,MALE,ASIAN,159,73,,0,1,0,0,77,,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AACK,70,MALE,ASIAN,172,68,0,1,1,1,0,104,1,not mutated,Mutated,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACL,66,FEMALE,ASIAN,150,69,0,1,1,,0,241,,Mutated,Mutated,not mutated,not mutated,not mutated,Mutated,Mutated,not mutated,Obesity
+AACM,48,MALE,ASIAN,177,68,0,1,1,0,0,42,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACN,32,MALE,ASIAN,171,70,0,1,1,0,0,36,,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACO,40,MALE,ASIAN,164,43,0,1,1,0,0,41,1,not mutated,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,Underweight
+AACP,64,MALE,ASIAN,155,62,1,0,1,1,0,132,,not mutated,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AACQ,50,MALE,ASIAN,169,64,0,1,1,0,0,184,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+AACS,39,MALE,ASIAN,172,80,0,1,1,1,0,41,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AACT,69,FEMALE,ASIAN,158,62,0,1,1,1,0,157,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACU,59,MALE,ASIAN,166,67,0,1,1,1,0,94,,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Healthy Weight
+AACV,53,MALE,ASIAN,169,70,1,0,1,0,0,87,,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Healthy Weight
+AACW,43,MALE,ASIAN,166,65,1,1,1,1,0,42,,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACX,66,MALE,ASIAN,155,53,1,1,1,0,0,109,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACY,61,MALE,ASIAN,162,62,0,1,1,0,0,82,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AACZ,63,FEMALE,ASIAN,149,52,,0,0,0,0,141,,Mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Healthy Weight
+AAD0,73,FEMALE,ASIAN,150,54,0,1,1,0,0,96,,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAD1,51,FEMALE,ASIAN,161,44,0,1,1,0,0,95,,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,Underweight
+AAD2,66,MALE,ASIAN,156,52,0,1,1,1,0,61,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAD3,43,MALE,ASIAN,178,77,1,1,1,1,0,62,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAD5,54,MALE,ASIAN,170,70,1,1,1,0,0,111,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+AAD6,66,MALE,ASIAN,167,93,0,1,1,0,0,84,,not mutated,not mutated,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,Obesity
+AAD8,73,FEMALE,ASIAN,152,57,0,1,1,1,0,82,1,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADA,66,FEMALE,ASIAN,147,59,0,1,1,1,0,90,,not mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+AADB,51,MALE,ASIAN,165,68,0,1,1,1,0,93,,Mutated,not mutated,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,Healthy Weight
+AADC,53,MALE,ASIAN,176,81,0,1,0,0,0,70,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AADD,51,MALE,ASIAN,168,68,0,1,1,1,0,74,,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADE,50,MALE,ASIAN,166,63,0,1,1,0,0,98,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADF,64,FEMALE,ASIAN,145,55,0,1,0,,0,168,,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,Overweight
+AADG,70,MALE,ASIAN,160,61,1,1,1,0,0,143,1,not mutated,not mutated,Mutated,not mutated,Mutated,Mutated,not mutated,not mutated,Healthy Weight
+AADI,43,FEMALE,ASIAN,165,64,0,1,1,1,0,91,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADJ,70,FEMALE,ASIAN,154,59,,0,1,1,0,52,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADK,68,FEMALE,ASIAN,150,51,0,1,1,1,0,49,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADL,58,MALE,ASIAN,159,53,1,1,1,1,0,108,,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+AADM,58,MALE,ASIAN,159,55,1,1,0,,0,145,,not mutated,Mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Healthy Weight
+AADN,59,MALE,ASIAN,160,62,1,1,1,1,1,81,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Mutated,Healthy Weight
+AADO,55,MALE,ASIAN,168,58,1,1,1,1,0,169,,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADP,45,MALE,ASIAN,167,67,0,1,1,1,0,89,,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADQ,59,MALE,ASIAN,165,64,1,1,1,1,0,109,,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADR,58,MALE,ASIAN,170,75,1,1,1,0,0,76,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AADS,63,MALE,ASIAN,164,53,1,1,1,1,0,124,,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,Mutated,Healthy Weight
+AADU,60,MALE,ASIAN,166,73,1,0,1,1,0,74,1,not mutated,not mutated,Mutated,Mutated,Mutated,Mutated,not mutated,not mutated,Overweight
+AADV,50,MALE,ASIAN,176,64,1,1,1,1,0,80,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AADW,48,MALE,ASIAN,163,49,0,1,1,0,0,44,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+AADY,55,FEMALE,ASIAN,161,55,0,1,1,1,0,48,1,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAE0,45,FEMALE,ASIAN,159,56,0,1,1,1,0,57,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAE1,52,MALE,ASIAN,169,62,0,1,1,1,0,44,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAE2,51,MALE,ASIAN,174,82,0,1,1,1,0,74,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AAE3,50,MALE,ASIAN,165,73,1,1,1,1,0,131,1,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AAE4,49,FEMALE,ASIAN,157,62,0,1,1,0,0,52,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AAE6,59,FEMALE,ASIAN,159,46,,0,1,0,0,61,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+AAE7,72,MALE,ASIAN,172,74,1,1,1,1,0,194,1,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,Overweight
+AAE8,45,MALE,ASIAN,170,78,0,1,1,0,0,50,1,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+AAE9,69,MALE,ASIAN,165,63,1,1,1,1,0,85,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAEA,65,MALE,ASIAN,163,66,1,1,1,1,0,151,1,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAEB,60,MALE,ASIAN,161,75,1,1,1,1,0,96,,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AAED,51,MALE,ASIAN,166,69,1,1,1,0,0,55,1,Mutated,not mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Overweight
+AAEE,55,MALE,ASIAN,160,58,0,1,1,0,0,73,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAEG,59,FEMALE,ASIAN,149,40,0,0,1,1,0,92,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Underweight
+AAEH,73,MALE,ASIAN,163,62,,0,1,0,0,76,1,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,Mutated,not mutated,Healthy Weight
+AAEI,72,MALE,ASIAN,166,79,0,1,1,0,0,95,1,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AAEK,51,MALE,ASIAN,169,64,0,1,1,1,0,63,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAPD,61,MALE,ASIAN,172,69,0,1,1,1,0,56,,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAU7,61,MALE,WHITE,,,0,1,1,0,1,53,,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,
+AAUZ,48,MALE,UNKNOWN_OTHER,160,77,0,1,1,1,0,71,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+AAV0,58,MALE,ASIAN,158,58,0,1,1,1,0,155,0,not mutated,Mutated,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,Healthy Weight
+AAV1,51,MALE,ASIAN,181,99,0,1,0,0,0,46,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+AAV2,50,MALE,WHITE,,,1,1,1,1,0,42,1,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,
+AAV3,58,FEMALE,WHITE,168,85,1,1,1,1,0,74,1,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Obesity
+AAV4,83,FEMALE,WHITE,156,56,0,1,0,,0,84,1,Mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAV5,67,MALE,WHITE,165,88,1,0,1,0,0,55,1,not mutated,not mutated,Mutated,not mutated,Mutated,not mutated,Mutated,not mutated,Obesity
+AAV6,53,FEMALE,WHITE,165,78,0,0,0,0,0,51,0,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AAV7,38,MALE,ASIAN,165,58,0,1,1,1,0,78,1,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAVP,48,MALE,ASIAN,167,62,0,1,1,0,0,63,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAVQ,38,MALE,ASIAN,171,72,0,1,1,0,0,48,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAVR,44,MALE,ASIAN,165,69,0,1,1,1,0,50,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AAVS,56,MALE,ASIAN,169,72,0,1,1,1,0,45,1,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Overweight
+AAVU,46,MALE,ASIAN,160,88,0,1,1,0,0,52,1,Mutated,Mutated,not mutated,not mutated,Mutated,not mutated,Mutated,not mutated,Obesity
+AAVV,56,MALE,ASIAN,158,71,0,1,1,1,0,104,1,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,not mutated,Overweight
+AAVW,35,MALE,ASIAN,162,62,0,1,1,1,0,36,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAVX,38,MALE,ASIAN,178,65,0,1,1,0,0,59,1,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,Healthy Weight
+AAVY,56,MALE,ASIAN,161,63,0,0,1,1,0,67,0,not mutated,not mutated,Mutated,Mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAVZ,38,MALE,ASIAN,171,62,0,1,1,1,0,35,1,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAW0,54,MALE,ASIAN,172,75,0,1,1,1,0,73,1,not mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+AAW1,55,MALE,ASIAN,167,60,0,0,1,1,0,87,1,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,not mutated,not mutated,Healthy Weight
+AAW2,69,MALE,ASIAN,156,50,0,0,1,0,0,92,1,not mutated,Mutated,Mutated,Mutated,Mutated,not mutated,not mutated,not mutated,Healthy Weight
+AAW3,69,MALE,ASIAN,162,64,0,0,1,1,0,83,0,not mutated,not mutated,Mutated,not mutated,not mutated,Mutated,not mutated,Mutated,Healthy Weight
+AAZ8,65,MALE,BLACK OR AFRICAN AMERICAN,172,84,0,1,1,0,1,100,1,not mutated,Mutated,Mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Overweight
+AB4B,62,MALE,WHITE,175,122,1,0,1,0,0,52,,Mutated,not mutated,not mutated,not mutated,Mutated,not mutated,not mutated,not mutated,Obesity

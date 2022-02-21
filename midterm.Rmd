@@ -1,0 +1,1070 @@
+---
+title: "PCLO and Hepatocellular Carcinoma Code Supplement"
+author: "Ariana Chriss, Tri Dong, Paul Morgan, Alec Pankow, Bryce Rowan, Rozalyn Wood"
+date: "February 20, 2022"
+output:
+  html_document:
+    df_print: paged
+subtitle: BSR1026 Group 1
+---
+
+Organized by primary and secondary analyses carried out by each team member. 
+
+### Bryce
+
+```{r}
+#This script gets through the analyses I used and includes the imutation set up for the data used in the midterm project
+
+#Step 1: Read in files and impute PCLO mutation
+library(openxlsx)
+Midterm_Dataset <- read.xlsx("data/Midterm_Dataset.xlsx")
+Keep_SubsetA <- Midterm_Dataset[,c(1:3,7:13,19,22)]
+Keep_SubsetB <- as.data.frame(Keep_SubsetA)
+Mutated <- Keep_SubsetB[which(Keep_SubsetB$PCLO == "Mutated"),]
+Not_Mutated <- Keep_SubsetB[which(Keep_SubsetB$PCLO == "not mutated"),]
+Extract_Missing_PCLO <- Keep_SubsetB[!complete.cases(Keep_SubsetB$PCLO),]
+nrow(Extract_Missing_PCLO)
+Extract_Missing_PCLO$PCLO <- "not mutated"
+Extract_Missing_PCLO$PCLO
+Pull_Full_PCLO <- Keep_SubsetB[complete.cases(Keep_SubsetB$PCLO),]
+nrow(Pull_Full_PCLO)
+New_Full_PCLO <- rbind(Pull_Full_PCLO,Extract_Missing_PCLO)
+table(New_Full_PCLO$PCLO)
+addmargins(table(New_Full_PCLO$PCLO,dnn=('PCLO')))
+summary(New_Full_PCLO)
+Mutated <- New_Full_PCLO[which(New_Full_PCLO$PCLO == "Mutated"),]#Updated version
+Not_Mutated <- New_Full_PCLO[which(New_Full_PCLO$PCLO == "not mutated"),]#Updated version
+#Now to impute the rest of the dataset based on our agreed upon rules
+Healthy_Full <- New_Full_PCLO[which(New_Full_PCLO$BMI_Category == "Healthy Weight"),]
+Overweight_Full <- New_Full_PCLO[which(New_Full_PCLO$BMI_Category == "Overweight"),]
+Underweight_Full <- New_Full_PCLO[which(New_Full_PCLO$BMI_Category == "Underweight"),]
+Obesity_Full <- New_Full_PCLO[which(New_Full_PCLO$BMI_Category == "Obesity"),]
+Missing_Weight_Full <- New_Full_PCLO[!complete.cases(New_Full_PCLO$BMI_Category),]
+Missing_Weight_Full$BMI_Category <- "Healthy Weight"
+Upgraded_Healthy_Full <- rbind(Healthy_Full,Missing_Weight_Full)
+nrow(Upgraded_Healthy_Full) - nrow(Healthy_Full)
+BMI_imputed_New_Full_PCLO <- rbind(Obesity_Full,Overweight_Full,Underweight_Full,Upgraded_Healthy_Full)
+nrow(BMI_imputed_New_Full_PCLO)
+summary(as.factor(BMI_imputed_New_Full_PCLO$Alcohol_History))
+Missing_AlcHis <- BMI_imputed_New_Full_PCLO[!complete.cases(BMI_imputed_New_Full_PCLO$Alcohol_History),]
+AlcHis <- BMI_imputed_New_Full_PCLO[complete.cases(BMI_imputed_New_Full_PCLO$Alcohol_History),]
+Missing_AlcHis$Alcohol_History <- 0
+HisAlc_BMI_imputed_New_Full_PCLO <- rbind(AlcHis, Missing_AlcHis)
+summary(as.factor(HisAlc_BMI_imputed_New_Full_PCLO$Sex))
+#No missing values for sex
+summary(as.factor(HisAlc_BMI_imputed_New_Full_PCLO$Hepatitis_History))
+Missing_HepHis <- HisAlc_BMI_imputed_New_Full_PCLO[!complete.cases(HisAlc_BMI_imputed_New_Full_PCLO$Hepatitis_History),]
+HepHis <- HisAlc_BMI_imputed_New_Full_PCLO[complete.cases(HisAlc_BMI_imputed_New_Full_PCLO$Hepatitis_History),]
+Missing_HepHis$Hepatitis_History <- 0
+HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO <- rbind(HepHis,Missing_HepHis)
+Missing_Mutation_Burden <- HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO[!complete.cases(HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$Mutation_Burden),]
+Mutation_Burden <- HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO[complete.cases(HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$Mutation_Burden),]
+Missing_Mutation_Burden$Mutation_Burden <- 112.4
+BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO <- rbind(Mutation_Burden,Missing_Mutation_Burden)
+#Save the files for group (Assumes you have a folder created to store the files)
+#save(BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO, file = "Additional_Files_rdata/Main_variables_imputed_dataset_MidtermProject_02_13_22.RData")
+Liver_Fibrosis <- BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO[complete.cases(BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$Liver_Fibrosis),]
+#save(Liver_Fibrosis, file = "Additional_Files_rdata/LiverFibrosis_Subset_Complete_Dataset_MidtermProject_02_13_22")
+Recurrence <- BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO[complete.cases(BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$Recurrence),]
+#save(Recurrence, file = "Additional_Files_rdata/Recurrence_Subset_Complete_Dataset_MidtermProject_02_13_22") 
+#Use pairwise wilcox test for the secondary level analyses
+pairwise.wilcox.test(BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$Mutation_Burden,BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$BMI_Category,p.adjust.method="fdr")
+pairwise.wilcox.test(BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$Mutation_Burden,BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$BMI_Category,p.adjust.method="none")
+#Output from test is a matrix of pvalues; fdr is a form of correcting for multiple comparisons in testing with other methods
+#Trends still hold, but the method did what was suppossed to do!
+#Have to use continous outcome with categorical variable
+Females <- BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO[which(BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$Sex == "FEMALE"),]
+Males <- BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO[which(BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO$Sex == "MALE"),]
+summary(Females)
+summary(Males)
+var.test(Females$Age, Males$Age, alternative = "two.sided")
+t.test(Females$Age, Males$Age, var.equal=TRUE)
+table(Females$PCLO,Females$Age)
+chisq.test(table(Females$PCLO,Females$Age))
+fisher.test(table(Females$PCLO,Females$Age))
+table(Males$PCLO,Males$Age)
+#Grouping attempt
+Mt_Females <- Females[which(Females$PCLO == "Mutated"),]
+Norm_Females <- Females[which(Females$PCLO == "not mutated"),]
+Norm_Males <- Males[which(Males$PCLO == "not mutated"),]
+Mt_Males <- Males[which(Males$PCLO == "Mutated"),]
+CancerbySexG <- rbind(Mt_Females,Mt_Males,Norm_Females,Norm_Males)
+Mt_Males$NewGroup <- "Mutated_Males"
+Mt_Females$NewGroup <- "Mutated_Females"
+Norm_Females$NewGroup <- "Norm_Females"
+Norm_Males$NewGroup <- "Norm_Males"
+CancerbySexG <- rbind(Mt_Females,Mt_Males,Norm_Females,Norm_Males)
+pairwise.wilcox.test(CancerbySexG$Age, CancerbySexG$NewGroup, p.adjust.method = "fdr")
+pairwise.wilcox.test(CancerbySexG$Age, CancerbySexG$NewGroup, p.adjust.method = "none")
+chisq.test(table(Males$PCLO,Males$BMI_Category))
+fisher.test(table(Males$PCLO,Males$BMI_Category))
+chisq.test(table(Males$PCLO,Males$Recurrence))
+chisq.test(table(Males$PCLO,Males$Metastasis))
+chisq.test(table(Males$PCLO,Males$Hepatitis_History))
+chisq.test(table(Males$PCLO,Males$Liver_Fibrosis))
+chisq.test(table(Males$PCLO,Males$Survival_Status))
+chisq.test(table(Males$PCLO,Males$Alcohol_History))
+chisq.test(table(Females$PCLO,Females$Alcohol_History))
+fisher.test(table(Females$PCLO,Females$Alcohol_History))
+chisq.test(table(Females$PCLO,Females$Metastasis))
+fisher.test(table(Females$PCLO,Females$Metastasis))
+fisher.test(table(Females$PCLO,Females$Recurrence))
+fisher.test(table(Females$PCLO,Females$Survival_Status))
+fisher.test(table(Females$PCLO,Females$Hepatitis_History))
+fisher.test(table(Females$PCLO,Females$Liver_Fibrosis))
+pairwise.wilcox.test(CancerbySexG$Mutation_Burden, CancerbySexG$NewGroup, p.adjust.method = "none")
+pairwise.wilcox.test(CancerbySexG$Mutation_Burden, CancerbySexG$NewGroup, p.adjust.method = "fdr")
+#Method to create table one, requires installing package, followed by loading it
+library(tableone)
+ncol(BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO)
+TempFile <- BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO[,-1]
+ncol(TempFile)
+colnames(TempFile)
+#Subset worked!
+#Going to try to make the other categorical variables categorical
+Second_TempFile <- TempFile
+Second_TempFile$Hepatitis_History <- as.factor(Second_TempFile$Hepatitis_History)
+Second_TempFile$Survival_Status <- as.factor(Second_TempFile$Survival_Status)
+Second_TempFile$Recurrence <- as.factor(Second_TempFile$Recurrence)
+Second_TempFile$Metastasis <- as.factor(Second_TempFile$Metastasis)
+Second_TempFile$Liver_Fibrosis <- as.factor(Second_TempFile$Liver_Fibrosis)
+CreateTableOne(data=Second_TempFile)
+#Now to do the same for the CancerbySexG dataset I made
+Second_Temp_CancerbySexG <- CancerbySexG[,-1]
+Second_Temp_CancerbySexG$Hepatitis_History <- as.factor(Second_Temp_CancerbySexG$Hepatitis_History)
+Second_Temp_CancerbySexG$Survival_Status <- as.factor(Second_Temp_CancerbySexG$Survival_Status)
+Second_Temp_CancerbySexG$Recurrence <- as.factor(Second_Temp_CancerbySexG$Recurrence)
+Second_Temp_CancerbySexG$Metastasis <- as.factor(Second_Temp_CancerbySexG$Metastasis)
+Second_Temp_CancerbySexG$Liver_Fibrosis <- as.factor(Second_Temp_CancerbySexG$Liver_Fibrosis)
+CreateTableOne(data=Second_Temp_CancerbySexG)
+```
+
+### Rozalyn
+
+```{r, eval=F}
+library(readxl)
+PcloDS<-read_xlsx("data/Midterm_Dataset.xlsx")
+library(dplyr)
+
+#Primary Outcomes
+
+#Mutation Burden + Gene (mutation/non mutation)
+#First: Subset data to Mutation Burden+ PCLO with and without mutation
+PcloMtN<-subset(x=PcloDS,
+             subset=PCLO=="not mutated",
+             select=c("Mutation_Burden","PCLO"))
+
+PcloMtY<-subset(x=PcloDS,
+                subset=PCLO=="Mutated",
+                select=c("Mutation_Burden","PCLO"))
+
+#Test statistics for Mutation burden + PCLO using a two sample t-test
+PcloMt1<-subset(x=PcloDS,
+               subset=PCLO=="Mutated",
+               select=c("Mutation_Burden"))
+
+PcloMt0<-subset(x=PcloDS,
+                subset=PCLO=="not mutated",
+                select=c("Mutation_Burden"))
+
+#Impute missing values with Mean for mutation burden
+PcloMt0$Mutation_Burden[is.na(PcloMt0$Mutation_Burden)] <- mean(PcloMt0$Mutation_Burden, na.rm = TRUE)
+PcloMt1$Mutation_Burden[is.na(PcloMt1$Mutation_Burden)] <- mean(PcloMt1$Mutation_Burden, na.rm = TRUE)
+
+# F-Test for Variance
+require(stats)
+var.test(x=PcloMt1$Mutation_Burden, y=PcloMt0$Mutation_Burden, alternative="two.sided", na.action=TRUE)
+
+#Using Welch's Two sample t-test because variance is unequal (based on F-test above)
+t.test(x=PcloMt1,
+       y=PcloMt0,
+       alternative ="two.sided",
+       paired=FALSE, 
+       var.equal=FALSE,
+       conf.level=0.95)
+
+#Secondary Outcomes
+
+#Liver fibrosis + PCLO - Basic association between gene mutation and LF
+#First Subset Data
+PcloLFN<-subset(x=PcloDS,
+                subset=PCLO=="Mutated",
+                select=c("Liver_Fibrosis","PCLO"))
+
+PcloLFY<-subset(x=PcloDS,
+                subset=PCLO=="not mutated",
+                select=c("Liver_Fibrosis","PCLO"))
+
+PcloLFNNA<-na.omit(PcloLFN)
+PcloLFYNA<-na.omit(PcloLFY)
+
+PcloLFAll<-rbind(PcloLFNNA,PcloLFYNA)
+PcloLFAll$PCLO[PcloLFAll$PCLO=="Mutated"]<-"1"
+PcloLFAll$PCLO[PcloLFAll$PCLO=="not mutated"]<-"0"
+
+#Test statistic for PCLO +LF
+
+#checking counts
+length(PcloLF0NA[PcloLF0NA=='0'])
+length(PcloLF0NA[PcloLF0NA=='1'])
+length(PcloLF1NA[PcloLF1NA=='0'])
+length(PcloLF1NA[PcloLF1NA=='1'])
+
+#Creating 2 by 2 dataframe from counts above
+PcloLFTable<-data.frame(
+  "Mutated PCLO" = c(8,14),
+  "Not Mutated PCLO" = c(68,122),
+  row.names = c("No Liver Fibrosis", "Liver Fibrosis"),
+  stringsAsFactors = FALSE
+)
+
+#Fisher exact test
+fisher.test(PcloLFTable,
+            conf.level = 0.95,
+            alternative="two.sided")
+#Outcome=Not significant based on fisher exact with approximately 50% of LF data NA
+
+#Secondary Outcomes with 3 Variables
+#Liver Fibrosis + Mutation Burden + PCLO Mutation Status: Subset data into 4 groups divided by PCLO mutation status + Liver Fibrosis
+load("LiverFibrosisDS.RData")
+LF_MB_P0<-subset(x=LiverFibrosis_completeOnly_rest_FullSet,
+              subset=PCLO=="not mutated",
+              select=c("Mutation_Burden","Liver_Fibrosis"))
+
+LF_MB_P1<-subset(x=LiverFibrosis_completeOnly_rest_FullSet,
+                 subset=PCLO=="Mutated",
+                 select=c("Mutation_Burden","Liver_Fibrosis"))
+LF0_MB_P0<-subset(x=LF_MB_P0,
+                 subset=Liver_Fibrosis=="0",
+                 select=c("Mutation_Burden"))
+
+LF1_MB_P0<-subset(x=LF_MB_P0,
+                  subset=Liver_Fibrosis=="1",
+                  select=c("Mutation_Burden"))
+
+LF0_MB_P1<-subset(x=LF_MB_P1,
+                  subset=Liver_Fibrosis=="0",
+                  select=c("Mutation_Burden"))
+
+LF1_MB_P1<-subset(x=LF_MB_P1,
+                  subset=Liver_Fibrosis=="1",
+                  select=c("Mutation_Burden"))
+
+#Creating column for groups 
+LF0_MB_P0$LF_PCLO<-"PCLO_0/LF_0"
+LF1_MB_P0$LF_PCLO<-"PCLO_0/LF_1"
+LF0_MB_P1$LF_PCLO<-"PCLO_1/LF_0"
+LF1_MB_P1$LF_PCLO<-"PCLO_1/LF_1"
+
+#rbinding all 4 groups together + making them a factor
+LF_MB_All<-rbind(LF0_MB_P0,LF0_MB_P1,LF1_MB_P0,LF1_MB_P1)
+
+LF_MB_All$LF_PCLO<-as.factor(LF_MB_All$LF_PCLO)
+
+#Pairwise Wilcoxen Rank Sum test on Mutation Burden+LF+PCLO
+pairwise.wilcox.test(x=LF_MB_All$Mutation_Burden,g=LF_MB_All$LF_PCLO,data=LF_MB_All,p.adjust.method="bonferroni",paired=FALSE,alternative="two.sided",conf.level=0.95)
+
+#Secondary Outcome analysis for PCLO mutation status+Age+Liver Fibrosis
+LF_Age_P0<-subset(x=LiverFibrosis_completeOnly_rest_FullSet,
+                 subset=PCLO=="not mutated",
+                 select=c("Age","Liver_Fibrosis"))
+
+LF_Age_P1<-subset(x=LiverFibrosis_completeOnly_rest_FullSet,
+                 subset=PCLO=="Mutated",
+                 select=c("Age","Liver_Fibrosis"))
+LF0_Age_P0<-subset(x=LF_Age_P0,
+                  subset=Liver_Fibrosis=="0",
+                  select=c("Age"))
+
+LF1_Age_P0<-subset(x=LF_Age_P0,
+                  subset=Liver_Fibrosis=="1",
+                  select=c("Age"))
+
+LF0_Age_P1<-subset(x=LF_Age_P1,
+                  subset=Liver_Fibrosis=="0",
+                  select=c("Age"))
+
+LF1_Age_P1<-subset(x=LF_Age_P1,
+                  subset=Liver_Fibrosis=="1",
+                  select=c("Age"))
+
+#Creating column for groups 
+LF0_Age_P0$LF_PCLO<-"PCLO_0/LF_0"
+LF1_Age_P0$LF_PCLO<-"PCLO_0/LF_1"
+LF0_Age_P1$LF_PCLO<-"PCLO_1/LF_0"
+LF1_Age_P1$LF_PCLO<-"PCLO_1/LF_1"
+
+#rbinding all 4 groups together + making them a factor
+LF_Age_All<-rbind(LF0_Age_P0,LF0_Age_P1,LF1_Age_P0,LF1_Age_P1)
+
+LF_Age_All$LF_PCLO<-as.factor(LF_Age_All$LF_PCLO)
+
+#Pairwise Wilcoxen Rank Sum test on Mutation Burden+LF+PCLO
+pairwise.wilcox.test(x=LF_Age_All$Age,g=LF_Age_All$LF_PCLO,data=LF_Age_All,p.adjust.method="bonferroni",paired=FALSE,alternative="two.sided",conf.level=0.95)
+```
+
+### Ariana
+
+```{r}
+require(moonBook)
+require(webr)
+library(dplyr)
+library(plotly)
+library(ggstatsplot)
+
+
+
+DataImp <- BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO
+
+# chi-squared test
+x=chisq.test(table(DataImp$Survival_Status,DataImp$PCLO), correct = FALSE)
+x
+#plot(x[[1]]) 
+
+ggbarstats(DataImp, x=PCLO, y=Survival_Status, package = "ggthemes",
+           palette = "Purple_Pink_Gray", title = "Alcohol history vs Mutation")
+
+
+
+x=chisq.test(table(DataImp$Alcohol_History,DataImp$PCLO), correct = FALSE)
+x
+#plot(x)
+
+ggbarstats(DataImp, x=PCLO, y=Alcohol_History, package = "ggthemes",
+           palette = "Purple_Pink_Gray", title = "Alcohol history vs Mutation")
+
+
+
+
+
+
+
+Vars <- select(DataImp, Survival_Status, Age, Mutation_Burden, Recurrence, Metastasis, PCLO, Alcohol_History)
+WithAlc <- subset(Vars, Alcohol_History %in% "1")
+WithoutAlc <- subset(Vars, Alcohol_History %in% "0")
+
+Varstable <- table(Vars$Survival_Status, Vars$Alcohol_History)
+chisq.test(Varstable)
+
+
+
+###############################################################################################
+
+
+###Survival Status WithAlc
+Varstable <- table(Vars$Survival_Status, Vars$Alcohol_History)
+chisq.test(Varstable)
+
+ggbarstats(WithAlc, x=PCLO, y=Survival_Status, package = "ggthemes",
+           palette = "Purple_Pink_Gray", title = "Those with alcohol history")
+
+
+
+table <- table(WithAlc$PCLO, WithAlc$Survival_Status)
+table
+chisq.test(table)
+
+###Recurrence WithAlc
+Varstable <- table(Vars$Recurrence, Vars$Alcohol_History)
+chisq.test(Varstable)
+
+ggbarstats(WithAlc, x=PCLO, y=Recurrence, package = "ggsci",
+           palette = "springfield_simpsons", title = "Those with alcohol history")
+
+
+
+table <- table(WithAlc$PCLO, WithAlc$Recurrence)
+table
+chisq.test(table)
+
+
+###Metastasis WithAlc
+Varstable <- table(Vars$Metastasis, Vars$Alcohol_History)
+chisq.test(Varstable)
+
+ggbarstats(WithAlc, x=PCLO, y=Metastasis, package = "ggsci",
+           palette = "springfield_simpsons", title = "Those with alcohol history")
+
+
+
+table <- table(WithAlc$PCLO, WithAlc$Metastasis)
+table
+chisq.test(table)
+
+
+##And now for continuous variables
+
+
+WithAlcNoMut <- subset(WithAlc, PCLO %in% "not mutated")
+WithAlcYesMut <- subset(WithAlc, PCLO %in% "Mutated")
+
+###Mutation Burden WithAlc
+var.test(WithAlc$Mutation_Burden, WithoutAlc$Mutation_Burden)
+t.test(WithAlc$Mutation_Burden, WithoutAlc$Mutation_Burden, alternative = "two.sided")
+
+
+var.test(WithAlcNoMut$Mutation_Burden, WithAlcYesMut$Mutation_Burden)
+t.test(WithAlcNoMut$Mutation_Burden, WithAlcYesMut$Mutation_Burden, alternative = "two.sided")
+
+
+###Age WithAlc
+var.test(WithAlc$Age, WithoutAlc$Age)
+t.test(WithoutAlc$Age,WithAlc$Age, alternative = "two.sided")
+###SIGNIFICANT???
+```
+
+```{r}
+boxplot(WithAlc$Age, WithoutAlc$Age, ylab = "Age", names = c("Alcohol History","NO Alcohol History"), main = "Alcohol History vs. Age")
+
+Violin_plot <- ggplot(data = DataImp,aes(x = Alcohol_History, y = Age,fill=Age))+
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1) #+
+  #rotate_x_text(angle = 45)
+
+Violin_plot + theme(
+  panel.background = element_rect(fill = "mediumorchid3",
+                                  colour = "mediumorchid3",
+                                  size = 0.5, linetype = "solid"),
+  panel.grid.major = element_line(size = 0.5, linetype = 'solid',
+                                  colour = "white"), 
+  panel.grid.minor = element_line(size = 0.25, linetype = 'solid',
+                                  colour = "white")
+)
+
+
+
+var.test(WithAlcNoMut$Age, WithAlcYesMut$Age)
+t.test(WithAlcNoMut$Age, WithAlcYesMut$Age, alternative = "two.sided")
+
+
+
+#####NOW WITHOUTALC #######
+
+###Survival Status WithoutAlc
+ggbarstats(WithoutAlc, x=PCLO, y=Survival_Status, package = "ggsci",
+           palette = "springfield_simpsons", title = "Those WITHOUT alcohol history")
+
+
+
+table <- table(WithoutAlc$PCLO, WithoutAlc$Survival_Status)
+table
+chisq.test(table)
+
+###Recurrence WithoutAlc
+ggbarstats(WithoutAlc, x=PCLO, y=Recurrence, package = "ggsci",
+           palette = "springfield_simpsons", title = "Those WITHOUT alcohol history")
+
+
+
+table <- table(WithoutAlc$PCLO, WithoutAlc$Recurrence)
+table
+chisq.test(table)
+
+
+###Metastasis WithoutAlc
+ggbarstats(WithoutAlc, x=PCLO, y=Metastasis, package = "ggsci",
+           palette = "springfield_simpsons", title = "Those WITHOUT alcohol history")
+
+
+
+table <- table(WithoutAlc$PCLO, WithoutAlc$Metastasis)
+table
+chisq.test(table)
+
+
+##And now for continuous variables
+
+
+WithoutAlcNoMut <- subset(WithoutAlc, PCLO %in% "not mutated")
+WithoutAlcYesMut <- subset(WithoutAlc, PCLO %in% "Mutated")
+
+###Mutation Burden WithAlc
+var.test(WithoutAlcNoMut$Mutation_Burden, WithoutAlcYesMut$Mutation_Burden)
+t.test(WithoutAlcNoMut$Mutation_Burden, WithoutAlcYesMut$Mutation_Burden, alternative = "two.sided")
+
+
+###Age WithAlc
+var.test(WithoutAlcNoMut$Age, WithoutAlcYesMut$Age)
+t.test(WithoutAlcNoMut$Age, WithoutAlcYesMut$Age, alternative = "two.sided")
+```
+
+
+```{r}
+require(readr)
+require(dplyr)
+require(ggplot2)
+require(ggpubr)
+require(pastecs)
+require(ggstatsplot)
+library(graphics)
+library(corrplot)
+require(tableone)
+require(sjPlot)
+
+
+### Using the imputed data
+#load("Main_variables_imputed_dataset_MidtermProject_02_13_22.RData")
+
+Midtermdata <- BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO
+
+Midtermdata$Metastasis <- factor(Midtermdata$Metastasis)
+
+Metattab <- table(Midtermdata$Metastasis,Midtermdata$PCLO)
+
+chisq.test(Metattab,correct = F)
+
+Mettabplot <- ggplot(Midtermdata, aes(x=Metastasis,fill=PCLO))+
+  geom_bar(position="dodge", color="black")+
+  scale_fill_manual(values = c("mediumorchid3","slateblue3"))+
+  labs(title ="Metastasis history by PCLO mutation",
+       y="Frequency") +
+  theme (plot.title = element_text(hjust = 0.5, size= 15, face="bold"),
+         panel.background = element_blank(),
+         strip.text.x = element_text(colour = "black", size = 15),
+         axis.line = element_line(colour = "black"),
+         axis.title.x = element_text(colour = "black", size = 10,face="bold"),
+         axis.text.x = element_text(colour = "black", size = 8, face = "bold"),
+         axis.title.y = element_text(colour = "black", size = 10,face="bold"),
+         axis.text.y = element_text(colour = "black", size = 10, face = "bold"))
+
+# length of palette giving issues, using default colors
+MetatGraph <- ggbarstats(Midtermdata,x = Metastasis, y=PCLO)
+
+#View(paletteer::palettes_d_names)
+
+#SEX
+
+Sextab <- table(Midtermdata$Sex,Midtermdata$PCLO)
+
+Chi <- chisq.test(Sextab)
+Chi$statistic
+fisher.test(Sextab)
+
+Sextabplot <- ggplot(Midtermdata, aes(x=Sex,fill=PCLO))+
+  geom_bar(position="dodge", color="black")+
+  scale_fill_manual(values = c("mediumorchid3","slateblue3"))+
+  labs(title ="Sex by PCLO mutation",
+       y="Frequency") +
+  theme (plot.title = element_text(hjust = 0.5, size= 15, face="bold"),
+         panel.background = element_blank(),
+         strip.text.x = element_text(colour = "black", size = 15),
+         axis.line = element_line(colour = "black"),
+         axis.title.x = element_text(colour = "black", size = 10,face="bold"),
+         axis.text.x = element_text(colour = "black", size = 8, face = "bold"),
+         axis.title.y = element_text(colour = "black", size = 10,face="bold"),
+         axis.text.y = element_text(colour = "black", size = 10, face = "bold"))
+
+
+SexGraph <- ggbarstats(Midtermdata,x = Sex, y=PCLO)
+
+### Compare Metastasis w/ Sex
+
+Metatandsextab <- table(Midtermdata$Metastasis,Midtermdata$Sex)
+chisq.test(Metatandsextab,correct = F)
+
+#Female
+
+FemaleData <- filter(Midtermdata,Sex=="FEMALE")
+MaleData <- filter(Midtermdata, Sex=="MALE")
+
+MetastasisandFe <- table(FemaleData$Metastasis,FemaleData$PCLO)
+fisher.test(MetastasisandFe) #Not significant
+
+#Male
+
+MetastasisandMale <- table(MaleData$Metastasis,MaleData$PCLO)
+chisq.test(MetastasisandMale,correct = F) #Not significant
+
+
+### Compare Recurrence w/ Sex
+
+Recurandsextab <- table(Midtermdata$Sex,Midtermdata$Recurrence)
+chisq.test(Recurandsextab,correct = F)
+
+#Female
+
+RecurFeTab <- table(FemaleData$PCLO,FemaleData$Recurrence)
+fisher.test(RecurFeTab) #Not significant
+
+#Male
+
+RecurMaleTab <- table(MaleData$PCLO,MaleData$Recurrence)
+chisq.test(RecurMaleTab,correct = F) #Not significant
+
+### Compare Survival Status w/ Sex
+
+Surviveandsextab <- table(Midtermdata$Sex,Midtermdata$Survival_Status)
+chisq.test(Surviveandsextab,correct = F) #SIGNIFICANT
+
+#Female
+
+SurviveFeTab <- table(FemaleData$PCLO,FemaleData$Survival_Status)
+fisher.test(SurviveFeTab) #Not significant
+
+
+#Male
+
+SurviveMaleTab <- table(MaleData$PCLO,MaleData$Survival_Status)
+chisq.test(SurviveMaleTab,correct = F)
+
+### Compare Age w/ Sex
+
+var.test(FemaleData$Age,MaleData$Age)
+t.test(FemaleData$Age,MaleData$Age)
+
+
+#Female
+
+FemaleMutation <- filter(FemaleData,PCLO=="Mutated")
+FemaleNotMutated <- filter(FemaleData, PCLO=="not mutated")
+
+t.test(FemaleMutation$Age,FemaleNotMutated$Age) #Not significant
+
+#Male
+
+MaleMutation <- filter(MaleData,PCLO=="Mutated")
+MaleNotMutated <- filter(MaleData, PCLO=="not mutated")
+
+t.test(MaleMutation$Age,MaleNotMutated$Age) #Not significant
+
+### Compare Mutation Burden w/ Sex
+
+t.test(FemaleData$Mutation_Burden,MaleData$Mutation_Burden) #SIGNIFICANCE
+
+#Female
+
+t.test(FemaleMutation$Mutation_Burden,FemaleNotMutated$Mutation_Burden) #Not significant
+
+#Male
+
+t.test(MaleMutation$Mutation_Burden,MaleNotMutated$Mutation_Burden) #Not significant
+```
+
+
+### Paul
+
+```{r}
+#python setup
+#use conda_env.yaml to generate conda env names 'BSR1026_midterm' before running
+Sys.setenv(RETICULATE_PYTHON = "/Users/appankow/opt/anaconda3/envs/BSR1026_midterm/bin/python")
+library(reticulate)
+use_condaenv("BSR1026_midterm", required = T)
+```
+
+
+```{python}
+import statistics
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from bioinfokit.analys import stat
+
+df = pd.read_csv('data/Midterm_Dataset.csv')
+print(df)
+
+sns.set_theme(style="ticks", color_codes=True)
+custom_palette = ['#B452CD','#6959CD']
+sns.set_palette(custom_palette)
+
+sns.catplot(x="BMI_Category", y="Age", hue="PCLO", kind="swarm", data=df)
+sns.catplot(x="Recurrence", y="Age", hue="PCLO", kind="swarm", data=df)
+sns.catplot(x="PCLO", y="Age", hue="Recurrence", kind="swarm", data=df)
+
+#Chi squared test
+ctab = pd.crosstab(df.PCLO,df.Recurrence)
+print(ctab)
+
+res = stat()
+res.chisq(df=ctab)
+print(res.summary)
+
+print(res.expected_df)
+
+#Chi squared test
+ctab2 = pd.crosstab(df.PCLO,df.BMI_Category)
+print(ctab2)
+
+res2 = stat()
+res2.chisq(df=ctab)
+print(res.summary)
+
+print(res2.expected_df)
+
+# cross-validate with Fisher
+from scipy.stats import fisher_exact
+
+#Fisher test for Crosstab PCLO and Recurrence
+fisher_exact(ctab)
+
+#Fisher test for Crosstab PCLO and BMI
+pvalue = fisher_exact(ctab)
+print(pvalue)
+```
+
+```{python}
+sns.set_theme(style="ticks", color_codes=True)
+custom_palette = ['#B452CD','#6959CD']
+sns.set_palette(custom_palette)
+
+sns.catplot(x="BMI_Category", y="Age", hue="PCLO", kind="swarm", data=df)
+sns.catplot(x="Recurrence", y="Age", hue="PCLO", kind="swarm", data=df)
+sns.catplot(x="PCLO", y="Age", hue="Recurrence", kind="swarm", data=df)
+
+#Chi squared test
+ctab = pd.crosstab(df.PCLO,df.Recurrence)
+print(ctab)
+
+res = stat()
+res.chisq(df=ctab)
+print(res.summary)
+
+print(res.expected_df)
+
+#Chi squared test
+ctab2 = pd.crosstab(df.PCLO,df.BMI_Category)
+print(ctab2)
+
+res2 = stat()
+res2.chisq(df=ctab)
+print(res.summary)
+
+print(res2.expected_df)
+
+# cross-validate with Fisher
+from scipy.stats import fisher_exact
+
+#Fisher test for Crosstab PCLO and Recurrence
+fisher_exact(ctab)
+
+#Fisher test for Crosstab PCLO and BMI
+pvalue = fisher_exact(ctab)
+print(pvalue)
+```
+
+### Alec
+
+```{r, message = F, warning = F}
+# imports
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(ggstatsplot)
+
+
+# read in data
+tcga <- readxl::read_xlsx("data/Midterm_Dataset.xlsx") %>%
+  mutate(
+    PCLO = if_else(PCLO == "Mutated", "mutated", "unmutated", missing = NULL),
+    PCLO_Status = if_else(PCLO == "mutated", 1, 0, missing = NULL)
+  )
+head(tcga)
+```
+
+### Data cleaning / imputation
+
+For variables where missing data makes up greater than 33 observations, omit NA observations from downstream analysis.
+For variables with fewer missing observations, replace NAs with the most frequent category or the sample mean. 
+
+```{r}
+# with 'pseudo-imputation' for PCLO status / Hepatitis history
+tcga.imp <- tcga %>% 
+  mutate(
+    PCLO = ifelse(is.na(PCLO), "unmutated", PCLO),
+    Hepatitis_History = ifelse(is.na(Hepatitis_History), 0, Hepatitis_History)
+    )
+
+tcga.imp
+```
+
+
+
+```{r}
+tcga.imp %>% group_by(Race) %>% summarise(n = n())
+```
+
+
+## Primary variable: Recurrence
+
+```{r}
+PCLO.recurrence.sum <- tcga.imp %>% 
+  select(PCLO, Recurrence) %>%
+  group_by(PCLO, Recurrence) %>%
+  na.omit() %>% 
+  summarise(n = n()) 
+PCLO.recurrence.sum
+```
+
+```{r}
+mat <- matrix(PCLO.recurrence.sum$n, nrow = 2)
+fisher.test(mat)
+```
+
+```{r}
+# unmutated: mediumorchid3; mutated: slateblue3 
+cols <- c("slateblue3", "mediumorchid3")
+
+ggplot(tcga, aes(factor(Recurrence), fill = PCLO)) + 
+  geom_bar(position = "fill") +
+  theme_classic() + 
+  geom_label(stat = "count", aes(label=..count..), position = position_fill(vjust = 0.5)) +
+  scale_fill_manual(values = cols) +
+  labs(x = "Recurrence", y = "Proportion") #+ facet_wrap(~ Hepatitis_History, labeller = label_both)
+
+ggsave("figs/recurrence_desc_bars.png", height = 6, width = 4, dpi = 200)
+```
+
+## Secondary variable: Hepatitis_History
+
+#### Stratified analysis
+
+Primary research variables
+
+- age (continuous)
+- mutation burden (continuous)
+
+- metastisis
+- recurrence
+- survival status
+
+My secondary research variable
+
+- hepatitis history
+
+```{r}
+# filtered dfs for tests... 
+tcga.mut <- tcga.imp %>% filter(PCLO_Status == 1)
+tcga.norm <- tcga.imp %>% filter(PCLO_Status == 0)
+
+tcga.mut.hep <- tcga.mut %>% filter(Hepatitis_History == 1)
+tcga.norm.hep <- tcga.norm %>% filter(Hepatitis_History == 1)
+
+tcga.mut.nohep <- tcga.mut %>% filter(Hepatitis_History == 0)
+tcga.norm.nohep <- tcga.norm %>% filter(Hepatitis_History == 0)
+```
+
+```{r}
+ggplot(tcga, aes(factor(Hepatitis_History), fill = PCLO)) + 
+  geom_bar(position = "fill") +
+  theme_classic() + 
+  coord_flip() +
+  geom_label(stat = "count", aes(label=..count..), position = position_fill(vjust = 0.5)) +
+  scale_fill_manual(values = cols) +
+  labs(x = "Hepatitis History", y = "Proportion")
+
+ggsave("figs/hep_hist_all_barplot.png", height = 3, width = 8, dpi = 200)
+```
+
+### Age
+
+```{r}
+ggplot(tcga.imp, aes(Age, fill = PCLO)) + 
+  geom_histogram(binwidth = 5) +
+  theme_classic() + 
+  scale_fill_manual(values = cols) + 
+  facet_grid(PCLO ~ Hepatitis_History, labeller = label_both) + theme(legend.position = "none") +
+  labs(y = "Count")
+
+ggsave("figs/Age_hep_hist_strat.png", height = 4, width = 5, dpi = 200)
+```
+
+```{r}
+var = "Age"
+# unstratified by hepatitis hist
+t1 <- t.test(tcga.mut[var], tcga.norm[var])
+t1
+```
+
+```{r}
+var.test(tcga.mut$Age, tcga.norm$Age)
+```
+
+```{r}
+# with hepatitis hist
+t.test(tcga.mut.hep[var], tcga.norm.hep[var], var.equal = F)
+```
+
+```{r}
+# with no hepatitis hist
+t.test(tcga.mut.nohep[var], tcga.norm.nohep[var])
+```
+
+```{r}
+# with no hepatitis hist
+var.test(tcga.mut.nohep$Age, tcga.norm.nohep$Age)
+```
+
+### Mutation burden
+
+```{r}
+ggplot(tcga.imp, aes(log10(Mutation_Burden + 1), fill = PCLO)) + 
+  geom_histogram() +
+  theme_classic() + 
+  scale_fill_manual(values = cols) + 
+  facet_grid(PCLO ~ Hepatitis_History, labeller = label_both) + theme(legend.position = "none") +
+  labs(y = "Count")
+
+ggsave("figs/mutation_hep_hist_strat.png", height = 3, width = 8, dpi = 200)
+```
+
+```{r}
+var = "Mutation_Burden"
+# unstratified by hepatitis hist
+t.test(tcga.mut[var], tcga.norm[var])
+```
+
+```{r}
+# with hepatitis hist
+t.test(tcga.mut.hep[var], tcga.norm.hep[var])
+```
+
+```{r}
+# with no hepatitis hist
+t.test(tcga.mut.nohep[var], tcga.norm.nohep[var])
+```
+
+### Recurrence
+
+```{r}
+ggplot(tcga.imp, aes(factor(Recurrence), fill = PCLO)) + 
+  geom_bar(position = "fill") +
+  theme_classic() + 
+  coord_flip() +
+  geom_label(stat = "count", aes(label=..count..), position = position_fill(vjust = 0.5)) +
+  scale_fill_manual(values = cols) +
+  labs(x = "Recurrence", y = "Proportion") + facet_wrap(~ Hepatitis_History, labeller = label_both)
+
+ggsave("figs/recurrence_hep_hist_strat_bars.png", height = 3, width = 8, dpi = 200)
+```
+
+```{r}
+# unstratified by hepatitis hist
+tcga.sum <- tcga.imp %>% group_by(PCLO, Recurrence) %>%
+  summarise(n = n()) %>% na.omit()
+tcga.sum
+
+m <- matrix(tcga.sum$n, nrow = 2)
+fisher.test(m)
+```
+
+```{r}
+# with hepatitis hist.
+tcga.sum <- tcga.imp %>% 
+  filter(Hepatitis_History == 1) %>%
+  group_by(PCLO, Recurrence) %>%
+  summarise(n = n()) %>% na.omit()
+tcga.sum
+
+m <- matrix(tcga.sum$n, nrow = 2)
+fisher.test(m)
+```
+
+```{r}
+# without hepatitis hist.
+tcga.sum <- tcga.imp %>% 
+  filter(Hepatitis_History == 0) %>%
+  group_by(PCLO, Recurrence) %>%
+  summarise(n = n()) %>% na.omit()
+tcga.sum
+
+m <- matrix(tcga.sum$n, nrow = 2)
+fisher.test(m)
+```
+
+### Metastisis
+
+```{r}
+ggplot(tcga.imp, aes(factor(Metastasis), fill = PCLO)) + 
+  geom_bar(position = "fill") +
+  theme_classic() + 
+  coord_flip() +
+  geom_label(stat = "count", aes(label=..count..), position = position_fill(vjust = 0.5)) +
+  scale_fill_manual(values = cols) +
+  labs(x = "Metastasis", y = "Proportion") + facet_wrap(~ Hepatitis_History, labeller = label_both)
+
+ggsave("figs/metastasis_hep_hist_strat_bars.png", height = 3, width = 8, dpi = 200)
+```
+
+```{r}
+# unstratified by hepatitis hist
+tcga.sum <- tcga %>% group_by(PCLO, Metastasis) %>%
+  summarise(n = n()) %>% na.omit()
+tcga.sum
+
+m <- matrix(tcga.sum$n, nrow = 2)
+fisher.test(m)
+```
+
+```{r}
+# with hepatitis hist.
+tcga.sum <- tcga %>% 
+  filter(Hepatitis_History == 1) %>%
+  group_by(PCLO, Metastasis) %>%
+  summarise(n = n()) %>% na.omit()
+tcga.sum
+
+m <- matrix(tcga.sum$n, nrow = 2)
+fisher.test(m)
+```
+
+
+```{r}
+# without hepatitis hist.
+tcga.sum <- tcga %>% 
+  filter(Hepatitis_History == 0) %>%
+  group_by(PCLO, Metastasis) %>%
+  summarise(n = n()) %>% na.omit()
+tcga.sum
+
+m <- matrix(tcga.sum$n, nrow = 2)
+fisher.test(m)
+```
+
+### Survival status
+
+```{r}
+ggplot(tcga.imp, aes(factor(Survival_Status), fill = PCLO)) + 
+  geom_bar(position = "fill") +
+  theme_classic() + 
+  coord_flip() +
+  geom_label(stat = "count", aes(label=..count..), position = position_fill(vjust = 0.5)) +
+  scale_fill_manual(values = cols) +
+  labs(x = "Survival_Status", y = "Proportion") + facet_wrap(~ Hepatitis_History, labeller = label_both)
+
+ggsave("figs/survival_hep_hist_strat_bars.png", height = 3, width = 8, dpi = 200)
+```
+
+```{r}
+# unstratified by hepatitis hist
+tcga.sum <- tcga %>% group_by(PCLO_Status, Survival_Status) %>%
+  summarise(n = n()) %>% na.omit()
+tcga.sum
+
+m <- matrix(tcga.sum$n, nrow = 2)
+fisher.test(m)
+```
+
+```{r}
+# with hepatitis hist.
+tcga.sum <- tcga %>% 
+  filter(Hepatitis_History == 1) %>%
+  group_by(PCLO, Survival_Status) %>%
+  summarise(n = n()) %>% na.omit()
+tcga.sum
+
+m <- matrix(tcga.sum$n, nrow = 2)
+fisher.test(m)
+```
+
+```{r}
+# without hepatitis hist.
+tcga.sum <- tcga %>% 
+  filter(Hepatitis_History == 0) %>%
+  group_by(PCLO_Status, Survival_Status) %>%
+  summarise(n = n()) %>% na.omit()
+tcga.sum
+
+m <- matrix(tcga.sum$n, nrow = 2)
+fisher.test(m)
+```

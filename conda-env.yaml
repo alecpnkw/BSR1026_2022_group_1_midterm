@@ -1,0 +1,8 @@
+name: BSR1026_midterm
+dependencies:
+  - python=3.7
+  - pandas
+  - seaborn
+  - numpy
+  - bioinfokit
+  
