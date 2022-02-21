@@ -645,9 +645,14 @@ sns.set_theme(style="ticks", color_codes=True)
 custom_palette = ['#B452CD','#6959CD']
 sns.set_palette(custom_palette)
 
-sns.catplot(x="BMI_Category", y="Age", hue="PCLO", kind="swarm", data=df)
-sns.catplot(x="Recurrence", y="Age", hue="PCLO", kind="swarm", data=df)
-sns.catplot(x="PCLO", y="Age", hue="Recurrence", kind="swarm", data=df)
+
+chart1 = sns.catplot(x="BMI_Category", y="Age", hue="PCLO", kind="swarm", data=df,)
+sns.move_legend(chart1, "upper left", bbox_to_anchor=(0.35, 1.05))
+chart2 = sns.catplot(x="Recurrence", y="Age", hue="PCLO", kind="swarm", data=df)
+sns.move_legend(chart2, "upper left", bbox_to_anchor=(0.3, 1))
+chart3 = sns.catplot(x="PCLO", y="Age", hue="Recurrence", kind="swarm", data=df)
+sns.move_legend(chart3, "upper left", bbox_to_anchor=(0.4, 1))
+
 
 #Chi squared test
 ctab = pd.crosstab(df.PCLO,df.Recurrence)
