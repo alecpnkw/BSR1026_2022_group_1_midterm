@@ -894,6 +894,7 @@ t1 <- t.test(tcga.mut[var], tcga.norm[var])
 t1
 ```
 
+
 ```{r}
 var.test(tcga.mut$Age, tcga.norm$Age)
 ```
@@ -901,6 +902,12 @@ var.test(tcga.mut$Age, tcga.norm$Age)
 ```{r}
 # with hepatitis hist
 t.test(tcga.mut.hep[var], tcga.norm.hep[var], var.equal = F)
+```
+
+Also finds an association with non-parametric test...
+
+```{r}
+wilcox.test(tcga.mut.hep$Age, tcga.norm.hep$Age, alternative = "two.sided")
 ```
 
 ```{r}
