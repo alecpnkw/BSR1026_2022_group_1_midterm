@@ -828,9 +828,11 @@ ggplot(tcga, aes(factor(Recurrence), fill = PCLO)) +
   theme_classic() + 
   geom_label(stat = "count", aes(label=..count..), position = position_fill(vjust = 0.5)) +
   scale_fill_manual(values = cols) +
-  labs(x = "Recurrence", y = "Proportion") #+ facet_wrap(~ Hepatitis_History, labeller = label_both)
+  labs(x = "Recurrence", y = "Proportion") +
+  coord_flip() + ggplot2::theme(legend.position = "bottom") 
+#+ facet_wrap(~ Hepatitis_History, labeller = label_both)
 
-ggsave("figs/recurrence_desc_bars.png", height = 6, width = 4, dpi = 200)
+ggsave("figs/recurrence_desc_bars.png", height = 3, width = 6, dpi = 1000)
 ```
 
 ## Secondary variable: Hepatitis_History
@@ -871,7 +873,7 @@ ggplot(tcga, aes(factor(Hepatitis_History), fill = PCLO)) +
   scale_fill_manual(values = cols) +
   labs(x = "Hepatitis History", y = "Proportion")
 
-ggsave("figs/hep_hist_all_barplot.png", height = 3, width = 8, dpi = 200)
+ggsave("figs/hep_hist_all_barplot.png", height = 3, width = 8, dpi = 1000)
 ```
 
 ### Age
@@ -884,7 +886,7 @@ ggplot(tcga.imp, aes(Age, fill = PCLO)) +
   facet_grid(PCLO ~ Hepatitis_History, labeller = label_both) + theme(legend.position = "none") +
   labs(y = "Count")
 
-ggsave("figs/Age_hep_hist_strat.png", height = 4, width = 5, dpi = 200)
+ggsave("figs/Age_hep_hist_strat.png", height = 4, width = 5, dpi = 1000)
 ```
 
 ```{r}
@@ -930,7 +932,7 @@ ggplot(tcga.imp, aes(log10(Mutation_Burden + 1), fill = PCLO)) +
   facet_grid(PCLO ~ Hepatitis_History, labeller = label_both) + theme(legend.position = "none") +
   labs(y = "Count")
 
-ggsave("figs/mutation_hep_hist_strat.png", height = 3, width = 8, dpi = 200)
+ggsave("figs/mutation_hep_hist_strat.png", height = 3, width = 8, dpi = 1000)
 ```
 
 ```{r}
@@ -960,7 +962,7 @@ ggplot(tcga.imp, aes(factor(Recurrence), fill = PCLO)) +
   scale_fill_manual(values = cols) +
   labs(x = "Recurrence", y = "Proportion") + facet_wrap(~ Hepatitis_History, labeller = label_both)
 
-ggsave("figs/recurrence_hep_hist_strat_bars.png", height = 3, width = 8, dpi = 200)
+ggsave("figs/recurrence_hep_hist_strat_bars.png", height = 3, width = 8, dpi = 1000)
 ```
 
 ```{r}
@@ -1008,7 +1010,7 @@ ggplot(tcga.imp, aes(factor(Metastasis), fill = PCLO)) +
   scale_fill_manual(values = cols) +
   labs(x = "Metastasis", y = "Proportion") + facet_wrap(~ Hepatitis_History, labeller = label_both)
 
-ggsave("figs/metastasis_hep_hist_strat_bars.png", height = 3, width = 8, dpi = 200)
+ggsave("figs/metastasis_hep_hist_strat_bars.png", height = 3, width = 8, dpi = 1000)
 ```
 
 ```{r}
@@ -1057,7 +1059,7 @@ ggplot(tcga.imp, aes(factor(Survival_Status), fill = PCLO)) +
   scale_fill_manual(values = cols) +
   labs(x = "Survival_Status", y = "Proportion") + facet_wrap(~ Hepatitis_History, labeller = label_both)
 
-ggsave("figs/survival_hep_hist_strat_bars.png", height = 3, width = 8, dpi = 200)
+ggsave("figs/survival_hep_hist_strat_bars.png", height = 3, width = 8, dpi = 1000)
 ```
 
 ```{r}
