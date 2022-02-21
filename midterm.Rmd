@@ -487,7 +487,7 @@ t.test(WithoutAlcNoMut$Mutation_Burden, WithoutAlcYesMut$Mutation_Burden, altern
 var.test(WithoutAlcNoMut$Age, WithoutAlcYesMut$Age)
 t.test(WithoutAlcNoMut$Age, WithoutAlcYesMut$Age, alternative = "two.sided")
 ```
-
+### TRI
 
 ```{r}
 require(readr)
@@ -496,14 +496,16 @@ require(ggplot2)
 require(ggpubr)
 require(pastecs)
 require(ggstatsplot)
-library(graphics)
-library(corrplot)
-require(tableone)
-require(sjPlot)
+require(moonBook)
+require(webr)
+require(plotly)
+
 
 
 ### Using the imputed data
 #load("Main_variables_imputed_dataset_MidtermProject_02_13_22.RData")
+
+#Metastasis
 
 Midtermdata <- BurdenMut_HepatitisHis_HisAlc_BMI_imputed_New_Full_PCLO
 
@@ -513,24 +515,10 @@ Metattab <- table(Midtermdata$Metastasis,Midtermdata$PCLO)
 
 chisq.test(Metattab,correct = F)
 
-Mettabplot <- ggplot(Midtermdata, aes(x=Metastasis,fill=PCLO))+
-  geom_bar(position="dodge", color="black")+
-  scale_fill_manual(values = c("mediumorchid3","slateblue3"))+
-  labs(title ="Metastasis history by PCLO mutation",
-       y="Frequency") +
-  theme (plot.title = element_text(hjust = 0.5, size= 15, face="bold"),
-         panel.background = element_blank(),
-         strip.text.x = element_text(colour = "black", size = 15),
-         axis.line = element_line(colour = "black"),
-         axis.title.x = element_text(colour = "black", size = 10,face="bold"),
-         axis.text.x = element_text(colour = "black", size = 8, face = "bold"),
-         axis.title.y = element_text(colour = "black", size = 10,face="bold"),
-         axis.text.y = element_text(colour = "black", size = 10, face = "bold"))
 
-# length of palette giving issues, using default colors
-MetatGraph <- ggbarstats(Midtermdata,x = Metastasis, y=PCLO)
-
-#View(paletteer::palettes_d_names)
+Metastasisplot <- ggbarstats(Midtermdata, x=Metastasis, y=Survival_Status, package = "ggthemes",
+                             palette = "Purple_Pink_Gray", title = "Metastasis vs PCLO")
+Metastasisplot
 
 #SEX
 
@@ -540,22 +528,12 @@ Chi <- chisq.test(Sextab)
 Chi$statistic
 fisher.test(Sextab)
 
-Sextabplot <- ggplot(Midtermdata, aes(x=Sex,fill=PCLO))+
-  geom_bar(position="dodge", color="black")+
-  scale_fill_manual(values = c("mediumorchid3","slateblue3"))+
-  labs(title ="Sex by PCLO mutation",
-       y="Frequency") +
-  theme (plot.title = element_text(hjust = 0.5, size= 15, face="bold"),
-         panel.background = element_blank(),
-         strip.text.x = element_text(colour = "black", size = 15),
-         axis.line = element_line(colour = "black"),
-         axis.title.x = element_text(colour = "black", size = 10,face="bold"),
-         axis.text.x = element_text(colour = "black", size = 8, face = "bold"),
-         axis.title.y = element_text(colour = "black", size = 10,face="bold"),
-         axis.text.y = element_text(colour = "black", size = 10, face = "bold"))
 
+Sexplot <- ggbarstats(Midtermdata, x=PCLO, y=Sex, package = "ggthemes",
+           palette = "Purple_Pink_Gray", title = "Sex vs PCLO")
 
-SexGraph <- ggbarstats(Midtermdata,x = Sex, y=PCLO)
+Sexplot
+        
 
 ### Compare Metastasis w/ Sex
 
