@@ -200,6 +200,20 @@ t.test(x=PcloMt1,
        var.equal=FALSE,
        conf.level=0.95)
 
+#Age by PCLO mutation status 
+#Subset data first
+PcloAge1<-subset(x=PcloDS,
+                subset=PCLO=="Mutated",
+                select=c("Age"))
+
+PcloAge0<-subset(x=PcloDS,
+                subset=PCLO=="not mutated",
+                select=c("Age"))
+
+#Impute missing values with Mean for mutation burden
+PcloAge0$Age[is.na(PcloAge0$Age)] <- mean(PcloAge0$Age, na.rm = TRUE)
+PcloAge1$Age[is.na(PcloAge1$Age)] <- mean(PcloAge1$Age, na.rm = TRUE)
+
 #Secondary Outcomes
 
 #Liver fibrosis + PCLO - Basic association between gene mutation and LF
@@ -442,6 +456,34 @@ ggplot(PcloMt, aes(x=PCLO,y=Mutation_Burden, fill=PCLO,color=PCLO)) +
                      labels=c('0'="Not Mutated",'1'="Mutated"))+
   scale_linetype_manual(values=c('0'="dotted",'1'="solid"), 
                         labels=c('0'="Not Mutated",'1'="Mutated"))
+                        
+#Subsetting for violin plot
+PcloAge0$PCLO<-"0"
+PcloAge1$PCLO<-"1"
+PcloAge<-rbind(PcloAge0,PcloAge1)
+
+#Violin Plot for Age vs PCLO 
+ggplot(PcloAge, aes(x=PCLO,y=Age, fill=PCLO,color=PCLO)) +
+  geom_violin(scale="count")+
+  labs(x="PCLO",
+       y="Age")+
+  theme(legend.position="bottom",
+        panel.border=element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.background = element_blank(),
+        strip.background.x = element_rect("grey83"),
+        axis.line = element_line(color="black"),
+        plot.subtitle = element_text(size=15, hjust = 0.5),
+        plot.title=element_text(size=15,face="bold", hjust = 0.5),
+        axis.title=element_text(size=15,hjust = 0.5))+
+  scale_fill_manual(values=c('0'="mediumorchid3",'1'="slateblue3"),
+                    labels=c('0'="Not Mutated",'1'="Mutated"))+
+  scale_color_manual(values=c('0'="mediumorchid3",'1'="slateblue3"),
+                     labels=c('0'="Not Mutated",'1'="Mutated"))+
+  scale_linetype_manual(values=c('0'="dotted",'1'="solid"), 
+                        labels=c('0'="Not Mutated",'1'="Mutated"))
+                        
 ```
 
 ### Ariana
