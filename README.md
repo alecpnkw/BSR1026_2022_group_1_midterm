@@ -1,5 +1,7 @@
-# An Exploratory Investigation of PCLO and Liver Cancer: Code Supplement
+# Code Supplement: 'An Exploratory Investigation of PCLO and Liver Cancer' 
+
 **Ariana Chriss, Tri Dong, Paul Morgan, Alec Pankow, Bryce Rowan, Rozalyn Wood**
+
 **BSR1026 Spring 2022, February 21, 2022** 
 
 Reproducible code document for Group #1 midterm as part of BSR1026, Spring 2022. 
