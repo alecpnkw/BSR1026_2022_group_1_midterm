@@ -1,14 +1,30 @@
 ---
-title: "PCLO and Hepatocellular Carcinoma Code Supplement"
+title: "An Exploratory Investigation of PCLO and Liver Cancer: Code Supplement"
 author: "Ariana Chriss, Tri Dong, Paul Morgan, Alec Pankow, Bryce Rowan, Rozalyn Wood"
-date: "February 20, 2022"
+date: "February 21, 2022"
 output:
   html_document:
     df_print: paged
-subtitle: BSR1026 Group 1
+subtitle: "BSR1026 Group 1"
 ---
 
-Organized by primary and secondary analyses carried out by each team member. 
+Organized by primary and secondary analyses carried out by each team member. Breakdown of the variable assignments are explained below. 
+
+Primary variables:
+
+- Age: Bryce
+- Mutation burden: Rozalyn
+- Recurrence: Paul and Alec
+- Survival status: Ariana
+- Metastasis: Tri
+
+Secondary variables:
+
+- Sex: Tri and Bryce
+- Hepatitis history: Alec
+- Alcohol history: Ariana
+- Liver fibrosis: Rozalyn
+- BMI: Paul
 
 ### Bryce
 
@@ -16,7 +32,7 @@ Organized by primary and secondary analyses carried out by each team member.
 #This script gets through the analyses I used and includes the imputation set up for the data used in the midterm project
 #Step 1: Read in files and impute PCLO mutation
 library(openxlsx)
-Midterm_Dataset <- read.xlsx("Midterm_Dataset.xlsx")
+Midterm_Dataset <- read.xlsx("data/Midterm_Dataset.xlsx")
 Keep_SubsetA <- Midterm_Dataset[,c(1:3,7:13,19,22)]
 Keep_SubsetB <- as.data.frame(Keep_SubsetA)
 Mutated <- Keep_SubsetB[which(Keep_SubsetB$PCLO == "Mutated"),]
@@ -158,7 +174,7 @@ CreateTableOne(data=Second_Temp_CancerbySexG)
 
 ### Rozalyn
 
-```{r, eval=F, warning=F}
+```{r, eval=T, warning=F}
 library(readxl)
 PcloDS<-read_xlsx("data/Midterm_Dataset.xlsx")
 library(dplyr)
@@ -258,7 +274,7 @@ fisher.test(PcloLFTable,
 
 #Secondary Outcomes with 3 Variables
 #Liver Fibrosis + Mutation Burden + PCLO Mutation Status: Subset data into 4 groups divided by PCLO mutation status + Liver Fibrosis
-load("LiverFibrosisDS.RData")
+load("data/LiverFibrosis_Subset_Complete_Dataset_MidtermProject_02_13_22.RData")
 LF_MB_P0<-subset(x=LiverFibrosis_completeOnly_rest_FullSet,
               subset=PCLO=="not mutated",
               select=c("Mutation_Burden","Liver_Fibrosis"))
